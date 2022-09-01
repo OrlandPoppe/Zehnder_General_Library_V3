@@ -1,0 +1,16 @@
+﻿{
+  "Id": "7eJn2TzjPUW53B7VkNlTbw",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/7eJn2TzjPUW53B7VkNlTbw",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "CreateScreen",
+  "Type": "Screen",
+  "Created": "2022-06-15T14:56:32.7310883Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-07-05T14:43:47.7576199Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

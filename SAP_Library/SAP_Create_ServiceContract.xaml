@@ -1,0 +1,1245 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_Change_Equipment" this:SAP_Change_Equipment.in_SoldToParty="11103616" this:SAP_Change_Equipment.in_SalesOrganisation="1740" this:SAP_Change_Equipment.in_DistributionChannel="Z1" this:SAP_Change_Equipment.in_Division="Z1" this:SAP_Change_Equipment.in_SalesOffice="DE01" this:SAP_Change_Equipment.in_OrderType="zta" this:SAP_Change_Equipment.in_TicketNR="934530" this:SAP_Change_Equipment.in_MaterialNumberService="70001001" this:SAP_Change_Equipment.in_Usage="Service contract" this:SAP_Change_Equipment.in_BillingPeriod="zj" this:SAP_Change_Equipment.in_ContractDuration="10" this:SAP_Change_Equipment.in_BillingPlanHorizon="zz" this:SAP_Change_Equipment.in_BillingPlanBlockCondition="02" this:SAP_Change_Equipment.in_ContractPeriods="120 Months" this:SAP_Change_Equipment.in_ContractPeriodsType="Year" this:SAP_Change_Equipment.in_ContractTemanationCondition="z002" this:SAP_Change_Equipment.in_HeaderDataOrderReason="Service contract" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SoldToParty" Type="InArgument(x:String)" />
+    <x:Property Name="in_SalesOrganisation" Type="InArgument(x:String)" />
+    <x:Property Name="in_DistributionChannel" Type="InArgument(x:String)" />
+    <x:Property Name="in_Division" Type="InArgument(x:String)" />
+    <x:Property Name="in_SalesOffice" Type="InArgument(x:String)" />
+    <x:Property Name="in_OrderType" Type="InArgument(x:String)" />
+    <x:Property Name="in_TicketNR" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaterialNumberService" Type="InArgument(x:String)" />
+    <x:Property Name="in_Usage" Type="InArgument(x:String)" />
+    <x:Property Name="in_BillingPeriod" Type="InArgument(x:String)" />
+    <x:Property Name="in_ContractDuration" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_BillingPlanHorizon" Type="InArgument(x:String)" />
+    <x:Property Name="in_BillingPlanBlockCondition" Type="InArgument(x:String)" />
+    <x:Property Name="in_ContractPeriods" Type="InArgument(x:String)" />
+    <x:Property Name="in_ContractPeriodsType" Type="InArgument(x:String)" />
+    <x:Property Name="in_ContractTemanationCondition" Type="InArgument(x:String)" />
+    <x:Property Name="in_HeaderDataOrderReason" Type="InArgument(x:String)" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1025,9759</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_Change_Equipment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="41">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Core.Activities.DateModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>Google.Apis.PeopleService.v1.Data</x:String>
+      <x:String>Google.Apis.Requests</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Google.Apis.PeopleService.v1</AssemblyReference>
+      <AssemblyReference>Google.Apis</AssemblyReference>
+      <AssemblyReference>Google.Apis.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="ToDo:&#xA;BillingPlan End date contract use in_ContractDuration&#xA;Error checks:&#xD;&#xA;=&gt; PO Number exist if exist Throw&#xD;&#xA;=&gt;If contract &lt;&gt; 10 years Throw" DisplayName="SAP_Create_ServiceContract" sap:VirtualizedContainerService.HintSize="1035,9694" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="var_BillingPlanRowCounter" />
+      <Variable x:TypeArguments="x:Int32" Name="var_RowStep" />
+      <Variable x:TypeArguments="x:String" Name="var_ReadMaterial" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: SAP Easy Access" sap:VirtualizedContainerService.HintSize="993,9510" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="959,9178" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message Navigate to VA01" sap:VirtualizedContainerService.HintSize="917,52" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Start Creating ServiceContract&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <Sequence sap2010:Annotation.AnnotationText="Create Sales Order Initial Screen" DisplayName="Sequence Create Sales Order Initial Screen." sap:VirtualizedContainerService.HintSize="917,112" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Navigate to VA01" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Navigate to VA01&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Navigate to VA01" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_22" Text="/nva01">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="56, 48, 142, 24" ElementType="InputBox" FriendlyName="'OkCodeField okcd'" FullSelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJIAAAAcCAYAAACKweYmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVHhe7dSxDcQgEETRq5Y+KIQ2SCmBMshpYM8IZFs21h3yhP9JE0D8tZ9aqzH2doTEJNtDSikxtrxpSMAKQoIEIUGCkCBBSJAgJEgQEiQICRKEBAlCwq5Ebz7k8TorFr23kMt43xESTlow7hJT/3PTwA6EhItswW0xxXZ9iuXQI3q+RR0hYWLE1C6Rjz8jaggJc2WLKfwXUUNIkCAkSBASJAgJEoQECUKCBCFBgpAg8RgSY6u7hcTYmxESE6zaF+QFMaMyzaQhAAAAAElFTkSuQmCC" InformativeScreenshot="a49b27c1f37181889257f4318aa4ee40.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm menu choice" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_27" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Order Type" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_23" Text="[in_OrderType]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="169, 194, 48, 20" ElementType="InputBox" FriendlyName="'CTextField Sales'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-AUART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-AUART' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEoSURBVFhH7ZdNDoJADIXntJzCxdzCsOYE7Ixu3JJwAeNmYsIRCIS/0dYZglCQoIaCvOQFfRboFzv8iJsQmjKoKKvaVt/OqHODx+xLZQhE/TBnZnuy6qujshpI7M4s7HkeAsF2ihEoN0Bzy/YAPU0VAuEHJkBJkiAQbKd4fUBwIE4j124wcB3tOMOWvqrrBcBwBgKneWkquiqu7h8AgfgAKe1LerSa3l8y3KcDhOlDvICkDmMTEopDOQzEa+Q+BOK3hjagJVwU3gNJP9JpGmHtKi4KTwilVRBoZWBqoCWOXPNfaZrpGqLvPU33AsGDYF5wAtqetl+8TqDD8YQH42B4jYae2q/WY41A2WMNga3s97kyOzWgoToqQyDKVPEvMurc4Had1XBW6Ts0ONS+AshzRgAAAABJRU5ErkJggg==" InformativeScreenshot="c27ff15c192775b46b7a0c2185535b67.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Order: Initial Screen' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts TAB to go to next field" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_28" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into SalesOrganisation" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_24" Text="[in_SalesOrganisation]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="169, 260, 34, 20" ElementType="InputBox" FriendlyName="'2210'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-VKORG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-VKORG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFSSURBVEhLzZRhbsMgDEZzLg7EeXwaNK0/chCO0m2ePzdfBgkhmiYNnuSK2gq8GjeLGh+fX3uQ0bmlVxyZ28XWdZ0i4AJcDCA5mtLBZwzMJOZXycUsYnBxMS6mE3vaB2IWMbgAFwMnsZw0hkWXxSJETXnLg04tp6QSg9Usv+VKktWCPydabglKh8vhlxBUthNzir4R6dWIQHhbkyxRI5NZNEqtRgc0y8XurxIdOh/+ol1ridW583NwgIuLcdETy2LtP/w6clW7Fzt//5UY2h/2/tf0an8RA9fDb2BQj3NAejVwL5abV0kuhj/bJnZwsTM2fWn0aj+0xNBhYdKG/zgCdPCr5KISw0P4S1exHdSrGcLXCMO6Uh4vsZ0HcICLi3FRd2wM04uB7vD/N6XD5Zt/BHTwq+RiFjG4uNjb+0MRSM4QuxgXhN9H5/bhB8ciGJNT/QYPyD9eohr7xQAAAABJRU5ErkJggg==" InformativeScreenshot="7cfead5361e2b1cf66687e782b36644c.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Order: Initial Screen' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Distribution Channel" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_25" Text="[in_DistributionChannel]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="169, 282, 20, 20" ElementType="InputBox" FriendlyName="'ZG'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-VTWEG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-VTWEG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAESSURBVEhLxZNRDoMgEEQ5FwfiPJyGNO2HB+Embep2Bx0CijWpkL5kk+1qZ2RHzes9C4rwd69ZMiCtG67OzNrLNE1di2bJAA2GvagM2IwwAMMMSA55hAG0q5B7AS1u5jDk4IwYU5QL6xUlBnHWLnPrxDutuF5TKgM2ewOb/xS9FZsVooo7CVkwilezlgE4Dzl6sdarzEpwhVmbUus05O3T4TTltlpQC9pfQ65Xs1AaoG9lBC1u5vhL3q6GNFZU5gUqAza1wT44j2BTtw352AAcGOhryKPnooGSXlPOdWWbE5VapyH/ArWg/b8v+QqVAZsRBsA8tUH1NiDmdn8ICsOeBfDgOWSeBEV6zJLBtxuuzWb5AMSnWAKZhDCOAAAAAElFTkSuQmCC" InformativeScreenshot="bf3045f55eb47df76ee1a34c9e7dc615.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Order: Initial Screen' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts TAB to go to next field" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_29" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Division" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_26" Text="[in_Division]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="169, 304, 20, 20" ElementType="InputBox" FriendlyName="'ZG'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-SPART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-SPART' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEUSURBVEhLtZPRDcMgDESZi4GYh2lQ1X5kEDap2rq+NGcRCo2UwkmWLCe5F3yJk03358uKGjFbAb9u+Hfm2CzLMrTgCe0Ao1R6rQBoBgDeFvJoADdjIU8DsJkBgLqAFJw4V1RI2xVVThK8/8x9kBi08nZNVXq5+6MdcgreHsrRizeHrOZBkhlmiQprAeB9HHKO4n1Um00pFLC24AVzA6DpAeq3w2nKbbW0A7BpAfar+agEoG9lRADUB9SroRorKvOCSq9OyN/BRQS7dnXIfQC8OyHrZ8ijWxGgWj9TznVl1Yngxc0chnxGOwCbGQBoGoDqhPyf6AXv4z/5hODFzbjL9SYoDEeWAdigqJEzA1D1DdD5mcgbT9lXd+y2j0EAAAAASUVORK5CYII=" InformativeScreenshot="a787b3c7ffe8ce7f920924a26143eaa0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Order: Initial Screen' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts TAB to go to next field" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_30" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Sales Office" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NTypeInto_27" Text="[in_SalesOffice]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="169, 326, 34, 20" ElementType="InputBox" FriendlyName="'CTextField Sales Office'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-VKBUR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-VKBUR' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVEhL7ZJBCsAgDAT9/4tKe/BfpWjZ0BGFIt7MIQOhS7wMzab7KZUBD7smBv0j7NiZmMg5uxhI33dY7gIH/SwTU/Aixjlbx0JsAmJiKP9ueoco/wpykIuJEUJsAmIiyr8CDnZKghcxuZgYIcQmICai/CvgYKckeBGTi4kR3Ikd51U1WnoYSYlWfoGth10r/9/jvl2pLy5y3hMuIVn7AAAAAElFTkSuQmCC" InformativeScreenshot="2376a888f2fdb936bab63ef029466cba.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Order: Initial Screen' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Choice" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_31" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <ui:LogMessage DisplayName="Log Message End of Create Sales Order Initial Screen." sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;End of Create Sales Order Initial Screen.&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence sap2010:Annotation.AnnotationText="Create MBU Standard Order Overview&#xA;" DisplayName="Sequence Create MBU Standard Order Overview" sap:VirtualizedContainerService.HintSize="917,128" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Overview Start" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Create MBU Standard Order Overview Start.&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Sold-to party" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="NTypeInto_28" Text="[in_SoldToParty]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="134, 172, 90, 20" ElementType="InputBox" FriendlyName="'CTextField Sold-to party'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUAGV-KUNNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUAGV-KUNNR' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGkSURBVGhD7ZmxasMwEIb9tFr7Ah3ssU+QaMiUOQUtobSGdPWUOQSK6dBMJmMggf71qZYtu5fWVrT1PvixOcsePh+HsJP3JAGXT3TQuYvjv9U4R5Qx93I1K97BLZDa9ZoT77i2jqu14pP7V8mELJdLK56OIemJF8bhXPnTYioiPgBydTqdrHg6hkTEBxBFfPMsET8BJ95PoRWU+i0ahbdexAfAi8+wPjQLGLaLFKYU8TcxFF8WBg93XXdniy2G70DER6AnvtBIZznequYiLjhu5lDZAtumQoj4CHTiC2i1wkdT97nsa/l15ztEfARa8XW3q7xt9QEHPGbrduSI+Ag48aVJMdudm+qQIzaqGzciPgKjOv6yx1w6Pi6teDvjc3DqD+vM28PLPj4Knfg61PXZCrvKjZwzqnz2LTs1KD3ZfkR8AD3xlNJAp113p7qA0XWH1/t7XZ9z8kV8AD/Esylh3Mtg5MtHsgCc+L8/kl2XL+IDGC+eQvL7OxqKiA9gmng+VvzT84t9mGR86PcduRv+0hubtuOF6dzizornIvThHFHCAL4AI23yBvoSmCEAAAAASUVORK5CYII=" InformativeScreenshot="fedb5de5fdbd8e7d6a07c6e3afe39644.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_32" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into PO Number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,228" sap2010:WorkflowViewState.IdRef="NTypeInto_29" Text="[&quot;#&quot;+in_TicketNR]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="134, 216, 160, 20" ElementType="InputBox" FriendlyName="'TextField Customer'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/txtVBKD-BSTKD' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/txtVBKD-BSTKD' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAYCAYAAAB0vVZPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEDSURBVGhD7ZpLCsJQEATfwT2Y6MazeAshH9MDM+SZgAs17aIKGjot7orMQtu9tXkv0zxHknxmY/vGtuecEkKOq2+pZxI2NvHrrYQU7XQjxBaxERLAgdwbp2l9sieEBBtvhWz6YAnAEXRCqiAkOOnck4xREBJMpHvxYoy2gJDgQu7VpdbAyQYnnZBVEBJMpJDRERLcdO6VmQgJJtK9eDFGW0BIcCH36lJr4GSDk07IKggJJlLI6MNSFIQEF517kjEKQoKJdC9ejPpBWyAkuJB7krH+7fN6sgGOBCHhr9gIeb5cYyTEFVFCJrI0k7CxiSO2EnIv4jGMlYSNTXy67Tl3b21+ArBhHHqjqPXxAAAAAElFTkSuQmCC" InformativeScreenshot="7ce8e4beacd48ad9a393af32e285b562.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_33" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Material number Service" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,228" sap2010:WorkflowViewState.IdRef="NTypeInto_30" Text="[in_MaterialNumberService]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="88, 545, 144, 20" ElementType="InputBox" FriendlyName="'CTextField Material'" FullSelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGrSURBVGhD7doxa8JAGMZxp279Av2At/YrJGM/gd7g5Kxwi1PA+UBwFqGEQuokQhepDk/vPZuYi2cMcfR54YciAQf/vNGYwddggJiiKOgJxD57ETu2Cx/UcrkkqjzSRBVU8fNLhMlk4oOSxz4YFAVkpIm+UwX19vrixd6EnsfhcPBByWMfDIoCEsVDQcmaYlBUagZitYJSbTRs7XgGRYF6TMLqFPOtVBKf1TiByRkU3VCPKbcGH++XbZSOV2i2xaCoVRWU1UiGGT53vhs3J+wXI6h0jNX/KzIMilqdw7DQaopvn0w4p42Lym2qchgUtfJhuO2ksmo1NWaLWTqvTn0MilpJFLlJMFwffTDXs8dCXU57DIpa+TDaNtRpgxE3FHV1DkO+Q2WIJbWdp7VrULwORXeUYfgtlU6x3pWnviN22fAcUWKQ1yKqY1AUCALJDXRy2UaJtjDabSTrXnfPY1ExKAo0A7mWw5SRRaLin8MUkCju/zl8OyreD0UBiaLb3QYSVfgLTzAoCkgU3YKKY1AUkNt4pYnmrb1dVUERlR5pwgcVw3mOiX32ot8Af23Obcs9RQsAAAAAAElFTkSuQmCC" InformativeScreenshot="28f8b3dbad71c5ab3452b459664a5fd7.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_34" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_35" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_36" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_37" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_38" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Overview end" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Create MBU Standard Order Overview end&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence sap2010:Annotation.AnnotationText="Create MBU Standard Order Item Data&#xA;Tab Sales A" DisplayName="Sequence Create MBU Standard Order Item Data Tab Sales A" sap:VirtualizedContainerService.HintSize="917,1688" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Start Tab Sales A" sap:VirtualizedContainerService.HintSize="797,93" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Sales A Start&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,93" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;Read Material code to check it it PO Number is not used!&quot;]" />
+              <uix:NGetText DisplayName="Get Text 'CTextField Material'" sap:VirtualizedContainerService.HintSize="797,167" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="88, 545, 130, 20" ElementType="Text" FriendlyName="'CTextField Material'" FullSelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' /&gt;" InformativeScreenshot="f0becdd5a531e9189093af966cd9aae5.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[var_ReadMaterial]</OutArgument>
+                </uix:NGetText.Text>
+              </uix:NGetText>
+              <If Condition="[var_ReadMaterial = in_MaterialNumberService]" DisplayName="If Check if PO Number is used" sap:VirtualizedContainerService.HintSize="797,410" sap2010:WorkflowViewState.IdRef="If_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,187" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;I'm on the Create MBU Standard Order: Header Data&quot;]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="var_SAP_Error" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Error" Message="[“I'm not on the Create MBU Standard Order: Header Data (PO Number already exists)” + var_SAP_Error]" />
+                    <Throw Exception="[New ApplicationException(“I'm not on the Create MBU Standard Order: Header Data (PO Number already exists)” + var_SAP_Error)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ClickType="Double" DisplayName="Double Click to open Item Data" sap:VirtualizedContainerService.HintSize="797,167" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 545, 46, 20" ElementType="Text" FriendlyName="'100'" FullSelectorArgument="&lt;sap colTooltip='Sales Document Item' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Sales Document Item' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' check:text='100' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAYCAYAAAC4CK7hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVFhH7ZhBCoMwEEXnUKbHUe8SxKOIuO8dAsFDFLIpFEp3WU0ztZHGWhUqTVISeGjyQfIcJwtBSolaa1RKRQntn64PkX8ArNX5co0S2juNJBIKSSQ0ksg3iLZDXhwQoMRmJm9MlgEgsBrFxmwQOfqpCGfvIqIqMW+fc1ljXvWbsuBE3LUOc/Pmt2SDiKceWRdx50tZEtmDdZF+4dNys+BEqKH5S0Nnk2b/lHkR4cwcn3SEWiZHKS/m15cyrxXZkyQSGj8XcXpjJ+i5qSIhcTJVsUT984EE7P1YkRiHFVE3jXftydiLiWpHMAAAAABJRU5ErkJggg==" InformativeScreenshot="7b4da854ac756d87bc98855d9a58c4c4.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Target Quantity" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,52" sap2010:WorkflowViewState.IdRef="NTypeInto_31" Text="1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 282, 139, 20" ElementType="InputBox" FriendlyName="'TextField Target'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/txtVBAP-ZMENG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/txtVBAP-ZMENG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAI8AAAAYCAYAAADDAK5oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADJSURBVGhD7dlRCoMwDIDhHHwHG9tDdxYPsm4pVLQmpubV/4OABnz7oQVlEanWqO9mOnb321l96LR4rA/YsVPebhePPD4MMzVmPEDkEE9fAh4ZOiEeTDPj0QeOLUS28WgvpZQq+kA8iBAP0tx4FPHgzHjnafG0pz/iwRk3Ho4tRLjzII14kMaFGWlcmJHGhRlp3HmQZsajP7iIB5ExHv6q47LeCfHgskM8z9e7LRlmZnbHlr7odP2dHTtvt8ZjjfUBu3vurD4WkfoDqsmx6fgrfjUAAAAASUVORK5CYII=" InformativeScreenshot="0ef8f8723ae61374b44118460050ce0a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="797,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_39" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NSelectItem DisplayName="Select Item 'Usage' &quot;Service contract&quot;" sap:VirtualizedContainerService.HintSize="797,52" sap2010:WorkflowViewState.IdRef="NSelectItem_7" Item="[in_Usage]">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Hanlo Gruppe</x:String>
+                    <x:String>Hanse-Haus</x:String>
+                    <x:String>Hellmann confirmed</x:String>
+                    <x:String>Hin House</x:String>
+                    <x:String>Huf Haus</x:String>
+                    <x:String>Invoiced service</x:String>
+                    <x:String>Jofer Haus</x:String>
+                    <x:String>Kampa Haus</x:String>
+                    <x:String>Keitel Haus</x:String>
+                    <x:String>Loan contract</x:String>
+                    <x:String>Massa Haus</x:String>
+                    <x:String>Meisterstückhaus</x:String>
+                    <x:String>Own usage</x:String>
+                    <x:String>Prefabricated house</x:String>
+                    <x:String>Qty. Difference</x:String>
+                    <x:String>Quality</x:String>
+                    <x:String>Regnauer</x:String>
+                    <x:String>Rensch Haus</x:String>
+                    <x:String>Rental contract</x:String>
+                    <x:String>RÖWA Haus</x:String>
+                    <x:String>Sample</x:String>
+                    <x:String>Sanderhaus</x:String>
+                    <x:String>Schäfer Haus</x:String>
+                    <x:String>Schwabenhaus</x:String>
+                    <x:String>Service contract</x:String>
+                    <x:String>Service guarantee</x:String>
+                    <x:String>Service Zehnder</x:String>
+                    <x:String>Special promotion</x:String>
+                    <x:String>Stock order customer</x:String>
+                    <x:String>Streiff Haus</x:String>
+                    <x:String>Suckfüll Haus</x:String>
+                    <x:String>Truck Order</x:String>
+                    <x:String>Weber Haus</x:String>
+                    <x:String>Wir Leben Haus</x:String>
+                    <x:String>Wolf Haus</x:String>
+                    <x:String>Wolf Systemhaus</x:String>
+                    <x:String>Wrong delivery</x:String>
+                    <x:String>ZPL Basic</x:String>
+                    <x:String>ZPL General</x:String>
+                    <x:String>ZPL HBH CSY</x:String>
+                    <x:String>ZPL HBH HEATING</x:String>
+                    <x:String>ZPL OEM excluded</x:String>
+                    <x:String>ZPL OEM RAD</x:String>
+                    <x:String>ZPL ONNINEN CSY</x:String>
+                    <x:String>ZPL ONNINEN HEATING</x:String>
+                    <x:String>ZPL PGC HEATING</x:String>
+                    <x:String>ZPL PROJECT MANUAL</x:String>
+                    <x:String>ZPL PROJECT RAD/CSY</x:String>
+                    <x:String>ZPL PROJECT RHC</x:String>
+                    <x:String>ZPL ROHA CSY</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 480, 153, 20" ElementType="DropDown" FriendlyName="'ComboBox Usage Indicator'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/cmbVBAP-VKAUS' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/cmbVBAP-VKAUS' /&gt;" InformativeScreenshot="8ffdbcdb11d9b884fa04739a03d9b988.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="797,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_40" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Tab Sales A End" sap:VirtualizedContainerService.HintSize="797,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Sales A End&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence sap2010:Annotation.AnnotationText="Create MBU Standard Order Item Data&#xA;Tab Billing Plan" DisplayName="Sequence Create MBU Standard Order Item Data Tab Billing Plan" sap:VirtualizedContainerService.HintSize="917,3405" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Tab Billing Plan Start " sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Billing Plan Start&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item Tab Billing Plan" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Billing plan">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                    <x:String>Sales A</x:String>
+                    <x:String>Sales B</x:String>
+                    <x:String>Contract data</x:String>
+                    <x:String>Shipping</x:String>
+                    <x:String>Billing Document</x:String>
+                    <x:String>Billing plan</x:String>
+                    <x:String>Conditions</x:String>
+                    <x:String>Account assignment</x:String>
+                    <x:String>Partners</x:String>
+                    <x:String>Texts</x:String>
+                    <x:String>Order Data</x:String>
+                    <x:String>Status</x:String>
+                    <x:String>Structure</x:String>
+                    <x:String>Additional data A</x:String>
+                    <x:String>Additional data B</x:String>
+                    <x:String>Request for Quote Addln Data</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b193ab9-0702-476e-941a-07b091b156d1" InformativeScreenshot="c8c97ed20c1f9c14e2ece217ee64237d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_41" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_42" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Billing Period" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NTypeInto_32" Text="[in_BillingPeriod]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="302, 304, 34, 20" ElementType="InputBox" FriendlyName="'53'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-PERIO' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-PERIO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIYSURBVEhLzZbPSsNAEMbzLD159AW8+wClb9DcxJsnDwk9+QBSl9JTzwqh0lOhXnMqHosgwYM9FY+FFvzcWTPJZjMJsX/UDz4SZjbLj5npdr03z4PkT+SidzbLjUl7kN11pCYxA8Zyk6R9YjYYS1onxTIw7/rpoB6NRgaMnrvYgBEpbXYo8V52N36qEph6fN7LJNprvV4bMHru4v8LxgN3DDDbsfLh+3VWiK312RAcHyzEZGnSoubDAFHigEmt7HVP4elWsFvdsQUwxsV5mj9p42JQD5bEEW4u8+qEwzlcxhIYQVWBFWFyE9RZ8J3rBW20zm+zHKkAFisE/SleVyaltcXH7A5+OMQ8jZAOAma7HiyG8u/xbqJFbV80nK4cSwQjSWB5K6lCRSA1uEIrbWXPipMyMF0tf5qVytESD+Eka6k4YyQXrOgxzhwAdl3FkihAf7ExsbI+MPPzdjYeftcdGnIh7uZIjSq2fcFdXcXkGaMKnaKTDbhu28lVWjE319bt5Jw0Y1NIaMtJaJ1hwjkmg2kPbjVAOmPOkVCXI+Vg2lS18B6LFbd0g9W0/w0TREgsGNuVw7+rSQUwchJBBXl1AhUjUrpC+nxT+l2C+7WTv+wEEcMKcH/8J14Nd7T7GG3e7HZBcMVfJPkfgMk2YLzZIU3XY9rbvTI3dQZGVWOz9o1xN1hV66SYAZNc9UFVTNqDzKr7thwDvgDAHrtzygSHDAAAAABJRU5ErkJggg==" InformativeScreenshot="5f9ed18145d7154eba8a6693653dd4e0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_43" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Start date (Today)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,228" sap2010:WorkflowViewState.IdRef="NTypeInto_33" Text="[DateTime.Today.ToString(“ddMMyyyy”)]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="141, 326, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Start'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-BEDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-BEDAT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC4SURBVFhH7ZVBCsMwDATz/xeV9uCf1e0a1sWIBknnGRBIS06DFF/v+UO9y5DdZ9eavtx9RPY/WwLVjDGoQtnZOmEPkMOuENgkCPQAOeTKS7cfEQTmCQI54RqHQDUIrGFXCGwSBHqAHHLlpeMRaRAEcsI1DoFqEFjDrhDYJAj0ADnkykvHI9IgCOSEaxwC1SCwhl0hsEkQ6AFyyJWX7no8X1OlgcrXFiijPmNvoyDLZfsf6ECQZbM5P5p0RTBYmXoOAAAAAElFTkSuQmCC" InformativeScreenshot="03023d3eafdb8c9d795f37fe78140edf.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Next field" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_44" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Next field" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_45" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into From Date (Today)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NTypeInto_34" Text="[DateTime.Today.ToString(“ddMMyyyy”)]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="498, 326, 90, 20" ElementType="InputBox" FriendlyName="'CTextField Dates from'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-LODAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-LODAT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVGhD7Zk9asNAEIV1Wp0ixd4iuNYJ1AWnSSvwBUIaEfARjET+Jp6xRlKssTW7Xkjh98FD8Njd4pMZGal4Lwqy8kM0RrnnznLEYebrlLVOxF9boKBbdnN32jGebhRfPLwgEamqSsTzNSUiXu7A8TDgQ12puxQgPgF21XWdiOdrSv6MGuAji3gd+BDvR8XP02xKKsvrCXU7rof4BCzxnP7ze1ix5OttsxTPQLyfLOKHHuIjOIlvqQ72SJnn8fVD9pjiMWrimMQH2h2G0uCwC5fFY8bHA/H/RDbxDMT7ySJe2iMQ7ydGfKj31Pd7WYuH643EiWfZLbVNQ+0gXcRjxscTL34SDvE3MIm3/7vPc1E83k7GcxKf4e2kHgZ8ZBOPURNHNvFP22c5DPGHP9+xu/NPet6Mv3hFH7bo1jt1t7bO6kS8FcXadI+d5Yjj2bvsiH4BIC31Ut42HL4AAAAASUVORK5CYII=" InformativeScreenshot="f9a67691ffa2879c55a73b2c4d6ade7f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Next field" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_46" Shortcuts="[d(hk)][k(tab)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Empty field Contract end Date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NTypeInto_35">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="218, 348, 20, 20" ElementType="InputBox" FriendlyName="'09'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-ENDAR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-ENDAR' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEHSURBVEhLvZJREsIgDEQ5FwfKeXIafnsQ7mJkqUuJilZL+2aYltjuk6ThZmZYhPtZtSog7x44WgvLstQNrjMXZVWAG1xncZkAnCYgbgazYFZrEZgtQHgTjFqUJFoMwUJUy4/aSjaNpV5/E0uPKtklyComfDOriW6KrEXc9tlS8npmgqFA3T9LJuUUBCfrfKbiT9FnDWfgBX7fnyAnLW30Qma1FoFfBOuJthlIfBUgvAm+tyi7Fj2DZ/sp7BJgyLr1pBsq2O79wFeYCYYCoMI2+M8UoWs9li/Nh4M+aziDIzCrtQjMFiC8CUYt+pfLBOA0AXEzmLlAbVG9K2DDRWbUquDTA8dqZneszFsq74mUCgAAAABJRU5ErkJggg==" InformativeScreenshot="39ac375f95bc6f770e549e7ef4c654f4.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </uix:NTypeInto.Text>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Contract end date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NTypeInto_36" Text="[Date.Today.ToString(“ddMMyyyy”).Replace(DatePart(“yyyy”,Now).ToString,(DatePart(“yyyy”,Now)+10).ToString)]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="498, 348, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Dates to'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-TNDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-TNDAT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZVBCsRACATz/xctu4f8bN30QAcGCaueq6DJKDkVisc3IhTjml6ttwSap5/oPfeOVV2c50kakTx9l0AXUGMT6FFEYB27QuCQJNAF1JArD912RKBGEsgK99gE6oHAHnaFwCFJoAuoIVceOo7IgCSQFe6xCdQDgT3sCoFDkkAXUEOuPHQckQFJICvcYxOoBwJ72BUCh2wCX+9PKCpIPfcKL5UXnkTF0Pvfu4+IY+hVehE/ssZFMfUk2FYAAAAASUVORK5CYII=" InformativeScreenshot="8eca36240982d04d36c2fec72d65208a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_47" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_48" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Horizon" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NTypeInto_37" Text="[in_BillingPlanHorizon]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="218, 370, 34, 20" ElementType="InputBox" FriendlyName="'CTextField Rule'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-HORIZ' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/ctxtFPLA-HORIZ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGQSURBVEhLzZaxbsIwFEXztV77Ax2SsV8QPDAxU8lLpkh0zcSMkKqoQ5kQIxKRuPUzfsEYJ6EQI650lXDjmKP3EsfJT5IgZNLRMasrC81BvuXeUGbAui4+mtHcrL5xoawFS96/RvVsNjNgdLzHF2BjiedyK/ZfGTBzMjLYfr83YHS8x68LRhPFaKX/R5UUEKLPEpUzPmnfguhgGYqNHRDQcppC1U8GqyuFj7dzdbLpEj5jEIwUDaySSPMS31t7EQ12iwlENsXSJqQrMJtHAqsgxRy/NnfVrDWcrhwrCHbUZYsCpqslyrZUnjb4zIq2pdet1FCxwGqVIl8dbOprh4U4t/OpYL0Va9aYDFWMFAXMPGMlQmibInPWsMA6ZsdFAtOmqmVzrLbc0gO2ZX6CSRVqB8Z13IefXSvI9FydVFZQUldIr29Sn4fg4j5jva6hGDYAd9r2RAIb/oh3w73A7oLgLt9I8mvvx7iVY5q2xzS3v2W+1S0YmcW/H824G27GGsoMWMhdN7D8LDQH2R9HGs6AP35tyu/GYHggAAAAAElFTkSuQmCC" InformativeScreenshot="56ceff102dfda2adcc862e50ac01b23c.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_49" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <If Condition="[in_ContractDuration = 10]" sap:VirtualizedContainerService.HintSize="875,1435" sap2010:WorkflowViewState.IdRef="If_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="454,1274" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,93" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Contract duration is 10 Years.&quot;]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="412,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[var_BillingPlanRowCounter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">6</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="412,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[var_BillingPlanRowCounter]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">6</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[var_RowStep]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <ui:InterruptibleDoWhile Condition="[var_BillingPlanRowCounter &gt; var_RowStep]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,587" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                      <ui:InterruptibleDoWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,420" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Blok Condition" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,228" sap2010:WorkflowViewState.IdRef="NTypeInto_38" Text="[in_BillingPlanBlockCondition]">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="472, 457, 46, 20" ElementType="InputBox" FriendlyName="'02'" FullSelectorArgument="[String.Format(&quot;&lt;sap colTooltip='Billing block' id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD' tableRow='{0}' /&gt;&quot;, var_RowStep)]" FuzzySelectorArgument="&lt;sap colTooltip='Billing block' id='usr/tabsTAXI_TABSTRIP/tabpT\06/ssubSUBSCREEN_BODY:SAPLV60F:4201/tblSAPLV60FTCTRL_FPLAN_PERIOD' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAYCAYAAAC4CK7hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVFhH7ZTNDcMgDEYZqicG8iq9ehqmQF2Acy6VKmUDl88N+W8V9ZAA4kkoBi5+sY3puk6894JviSvlbhDUsMzz1WtQKsgdDk0kF5pIbtQv4siKNUaMZQnDmRKckI3nekfiFpfXoSL+vhQJTEJOQ2yEeMqWrRUesg+OVDQHdivC+NMaAVTgW7K/7s7lgMh2nwgc229WrSv5WwTtZ8f+u54DImHTPngI5nOTAx+Rx3bYOZnEYZ/aJ0TJKDErBKRzUFKR9asFmNITO3t+IYWzxdqfn7NB7jfksxYpDa3IekZKpInkRhPJjVEEQQ2rkor08gYv8emAKwPtIgAAAABJRU5ErkJggg==" InformativeScreenshot="fc0571108da67b89ac2a5335f1945806.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[var_RowStep]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[var_RowStep+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:InterruptibleDoWhile.Body>
+                    </ui:InterruptibleDoWhile>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirma selection" sap:VirtualizedContainerService.HintSize="412,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_51" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Contract duration is not vallid&quot;]" />
+                    <Throw DisplayName="Private: Throw" Exception="[New ApplicationException(“no valid contract period”)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Tab Billing Plan End" sap:VirtualizedContainerService.HintSize="875,52" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Billing Plan End&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence sap2010:Annotation.AnnotationText="Create MBU Standard Order Item Data&#xA;Contract Data" DisplayName="Sequence Create MBU Standard Order Item Data Tab Contract Data" sap:VirtualizedContainerService.HintSize="917,1997" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Contract Data Start " sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Contract Data Start&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item Select Tab Contract Data" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="SelectMenuItem_2" Item="Contract data">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                    <x:String>Sales A</x:String>
+                    <x:String>Sales B</x:String>
+                    <x:String>Contract data</x:String>
+                    <x:String>Shipping</x:String>
+                    <x:String>Billing Document</x:String>
+                    <x:String>Billing plan</x:String>
+                    <x:String>Conditions</x:String>
+                    <x:String>Account assignment</x:String>
+                    <x:String>Partners</x:String>
+                    <x:String>Texts</x:String>
+                    <x:String>Order Data</x:String>
+                    <x:String>Status</x:String>
+                    <x:String>Structure</x:String>
+                    <x:String>Additional data A</x:String>
+                    <x:String>Additional data B</x:String>
+                    <x:String>Request for Quote Addln Data</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="738ddea5-c3de-4bb4-ad80-ee32dc633e3f" InformativeScreenshot="e31a7508adf3b88514b9bc2769290617" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Contract Startdate (Today)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="NTypeInto_39" Text="[DateTime.Today.ToString(“ddMMyyyy”)]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 282, 90, 20" ElementType="InputBox" FriendlyName="'CTextField Contract'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VBEGDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VBEGDAT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVGhD7ZlNasMwEIV1Wp+iC92iZO0TeFfSTbeGXKB0Iwo5QrDpn9qZeGQ1VtSRI5pF3gcPxw/Ji48wNrZ5NcanQnxFEW61SzmiCLm9qY7F5xagO9+J+LgT/uqCeHP3hBSkbVsWT8c1+SUe6BBX8o9fA4vnHxCvhlwNw8Di6bgmEL+CKuLpQhg1ZYj4OP2m8U2Tj+1cWG/CXRbi1aTEU8b3z2nFko+XDcRfSjXxBMTrOYp3vrPpkRLn/vmN9yzEc/sDxOuZxVu/O0xlgsPO5sVj1JRRRTxmfDkQfyWqiScgXk+JeNvt/TjueS1urhdSJp5kO+/63rtJehCPUVNGufhZeBCPGV/OLD797B7nrHh60QPxZRzF4+3kvwPxV6Ka+IftI18M0Yc+35G700962oQZTxHkHF2+i91JR2g6Fp9KbhNxa13KEUWzd9l5/w1IlPVS3IpaEAAAAABJRU5ErkJggg==" InformativeScreenshot="37a9d14446e6ed3448201c900c769c6f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Contract Enddate (+10 Year)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="NTypeInto_40" Text="[Date.Today.ToString(“ddMMyyyy”).Replace(DatePart(“yyyy”,Now).ToString,(DatePart(“yyyy”,Now)+10).ToString)]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 304, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Contract'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VENDDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VENDDAT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADCSURBVFhH7ZVBCsMwDAT9/xeV9uC/9CF12YQNGKVG8rUzsEQSzmWQcXu3Nj5jHDHuma1ncncIvMvqR/FvsztHSvOh3jspRN70bae+s4EcQaAbyDEJVIHAGnaFwE2CQDeQQ668dDwiGwSBXOEak0AVCKxhVwjcJAh0AznkykvHI7JBEMgVrjEJVIHAGnaFwE2CQDeQQ668dDwiGwSBXOEak0AVCKxhV4fAx/M1FDUkn0ugts94G5nlZ9cjsjrE7NdsjC+XEyfBxokqAwAAAABJRU5ErkJggg==" InformativeScreenshot="a595311a2cc590857c80f8f4561e3cc2.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox Validity' Runningtime contract in periods" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="SelectMenuItem_3" Item="[in_ContractPeriods]">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>0 Months</x:String>
+                    <x:String>1 year</x:String>
+                    <x:String>103 months</x:String>
+                    <x:String>11 months</x:String>
+                    <x:String>12 months</x:String>
+                    <x:String>120 Months</x:String>
+                    <x:String>13 months</x:String>
+                    <x:String>15 Months</x:String>
+                    <x:String>2 years</x:String>
+                    <x:String>21 Months</x:String>
+                    <x:String>24 Months</x:String>
+                    <x:String>36 months</x:String>
+                    <x:String>42 Months</x:String>
+                    <x:String>48 months</x:String>
+                    <x:String>5 months</x:String>
+                    <x:String>55 months</x:String>
+                    <x:String>56 Months</x:String>
+                    <x:String>57 Months</x:String>
+                    <x:String>6 months</x:String>
+                    <x:String>60 months</x:String>
+                    <x:String>72 months</x:String>
+                    <x:String>72 Months</x:String>
+                    <x:String>84 months</x:String>
+                    <x:String>9 months</x:String>
+                    <x:String>93 Months</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0d5f1ca3-cd86-4024-b55b-4d301fa4acf3" InformativeScreenshot="e6f75fbede589e37ae1a9b07dec86081" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/cmbVEDA-VLAUFK' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Contract Periods" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,228" sap2010:WorkflowViewState.IdRef="NTypeInto_41" Text="[in_ContractDuration.ToString]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 348, 27, 20" ElementType="InputBox" FriendlyName="'TextField Validity'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/txtVEDA-VLAUFZ' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/txtVEDA-VLAUFZ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAYCAYAAAACqyaBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACCSURBVEhL7ZJBCoAwEAP3/y8SPfQvPsS6WZiC4FHTSweCNQgDNdGTK3NG1BN0JvB1F5ISePvwjy4oW2u24Cy5UOngIa8mccvFGJxTDo9/7gBPXfsMOc41OKsc1uDmyKtJ3HKxBmeV41yDs8ohtv3oikpXRF079w+8O7oxOEHp6Xq/AUtURwVEUTitAAAAAElFTkSuQmCC" InformativeScreenshot="0d94fc5a7d90110074fc2c4084ffc90b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item ContractTypePeriods" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="SelectMenuItem_4" Item="[in_ContractPeriodsType]">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="8">
+                    <x:String>Day</x:String>
+                    <x:String>Week</x:String>
+                    <x:String>Month</x:String>
+                    <x:String>Year</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1664d910-a447-4211-9a2d-c59cc265f6de" InformativeScreenshot="a1ef4517a4c1ef0cbaeb7e91250c15ff" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/cmbVEDA-VLAUEZ' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Termination Condition" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,228" sap2010:WorkflowViewState.IdRef="NTypeInto_42" Text="[in_ContractTemanationCondition]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="176, 458, 48, 20" ElementType="InputBox" FriendlyName="'CTextField Assignment'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VKUESCH' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP/tabpT\03/ssubSUBSCREEN_BODY:SAPLV45W:4201/ctxtVEDA-VKUESCH' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGTSURBVFhH3Ze9asMwFIX9tFr7Ah3ssU/gaPCUOQUtobSGdPWUOQSK6VBPJmMgpj31VSVbUW+dNKRY7oGDw7Fs6+PqJ4peowic3z/Q2eovMu7b5HOe5TINxN0YM6M+WQ2147IOKLp9DsLz+VwD0fUSayASvWxs2T64FfqtggPa7/caiK6X+GjIja2rAHWTKSAg14UUEGLIEoXTfgJACZaVacBoncVQpQdEChGoLBTubvpqJNkaPts3IJOHB1RIxGmOl9rcRIPdagaRZFibhMQChTfkCkixwJvJXTXbFqqtlBU75IIDaqsj8q40nircJ8tu6E0CqFQx0s3BpL52WIl+2E1jURiqULPFbKhCJg8LSM+hHBxStUycPYjZh6hRcHOITFVKFtjUdugdUOfpF0SsUDoQrsPeWEsFGffViGUBJduKtPuTbH9zUGEDsS6hLCQDNdF/2z9DTfj4QFDHKxz5/x0f6OGHxyf9shBMx2jqk3+0PtddhazsIjFmRn3yM6tTmQbibOU2trpmxn2b7Lcjnc6AT2/l0x9VsmGkAAAAAElFTkSuQmCC" InformativeScreenshot="e1c4b107142a49b559c0333edeffbc96.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Item Data' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Go Back to Previous menu" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_52" Shortcuts="[d(hk)][k(f3)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_58" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm Entry" sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_59" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Item Data Tab Contract Data End" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Create MBU Standard Order Item Data Tab Contract Data End&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence sap2010:Annotation.AnnotationText="Sequence Create MBU Standard Order Header Data" DisplayName="Sequence Create MBU Standard Order Header Data" sap:VirtualizedContainerService.HintSize="917,958" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Create MBU Standard Order Header Data Start" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Create MBU Standard Order Header Data&quot;]" />
+              <uix:NClick ClickType="Single" DisplayName="Click 'Button Display' Click Header Data" sap:VirtualizedContainerService.HintSize="334,167" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="561, 215, 20, 22" ElementType="Button" FriendlyName="'Button Display'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/btnBT_HEAD' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAaCAYAAACtv5zzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF1SURBVEhLvVTBbcMwDPQaWSijeA7N0J/e9gJaoT8BffetbNCfUSA2y6NDQY5pp3aFEjiEYug78mS4mYgI0NBzrZoIaFgNf601c0rU9z11XVcF4BqZHb8iME6T/FErwKWcDRI9DMNQBf8ioJuIgB6sZiAFR23b7sPH3L8QkIyjtkC2COSbFqVI3vHDzpFjtK0jH9K6L/ptASS2QKLApCGWhHPNx7KPcUqAH3I87dfblT4ulweudHsP5ISMt4M1LlAyBNT2zUuG75h0JfDJW3gmLXqtDZRz+5JTsP3G5N7P0+9skC0CuWkR/GaiuKgNFLkWcPm/FUBiCuAhIeBpQ6DIwOQxFT1l7yEBtsfpdFoT4C16TP5iA7V9fckGOS4cb5QSrLAnIBmHCswTLr1XgeiLyV9scFeLQK4HaeALfPb5zAZZAMlCwMCZb9EhgaMAl9ouAnqwms9gISAZR22BbBHI9VATWeD7PpJCo2YtC2g8NyDO14h+ADHVj/GPRtYUAAAAAElFTkSuQmCC" InformativeScreenshot="23c801e6ab9979110f9e38c73ac2a2c7.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Service Order'" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="SelectMenuItem_6" Item="[in_HeaderDataOrderReason]">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Change of Payment Terms</x:String>
+                    <x:String>Customer Error</x:String>
+                    <x:String>Damaged in transit voucher</x:String>
+                    <x:String>Damaged in transit with del.confirmation</x:String>
+                    <x:String>Delay penalty</x:String>
+                    <x:String>Discount for complaint</x:String>
+                    <x:String>Double delivery</x:String>
+                    <x:String>Exhibition</x:String>
+                    <x:String>Field Service</x:String>
+                    <x:String>Filter Subscription</x:String>
+                    <x:String>Free of charge sample</x:String>
+                    <x:String>Goods not received</x:String>
+                    <x:String>Goodwill</x:String>
+                    <x:String>Inside sales</x:String>
+                    <x:String>Masterdata Problem</x:String>
+                    <x:String>Material + mounting</x:String>
+                    <x:String>Material for mounting</x:String>
+                    <x:String>Mounting</x:String>
+                    <x:String>New invoice</x:String>
+                    <x:String>Non conforme delivery HUB</x:String>
+                    <x:String>Nonconformity PBU</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Others</x:String>
+                    <x:String>Own usage</x:String>
+                    <x:String>Partnerprogram</x:String>
+                    <x:String>Prefabricated house</x:String>
+                    <x:String>Preproject</x:String>
+                    <x:String>Price difference : Credit note</x:String>
+                    <x:String>Price difference : Debit note</x:String>
+                    <x:String>Quality</x:String>
+                    <x:String>Quantity discrepancy</x:String>
+                    <x:String>Quantity non conforme</x:String>
+                    <x:String>Retention clause</x:String>
+                    <x:String>Return of goods</x:String>
+                    <x:String>Sales Promotion</x:String>
+                    <x:String>Service Zehnder</x:String>
+                    <x:String>Service contract</x:String>
+                    <x:String>Services</x:String>
+                    <x:String>Services billed</x:String>
+                    <x:String>Services warranty</x:String>
+                    <x:String>Shipping dispute</x:String>
+                    <x:String>Stock order customer</x:String>
+                    <x:String>Supplier invoice, conversion operation</x:String>
+                    <x:String>System Error</x:String>
+                    <x:String>Systempaket CSY</x:String>
+                    <x:String>Training</x:String>
+                    <x:String>VAT RECOVERY</x:String>
+                    <x:String>View sample</x:String>
+                    <x:String>Wrong delivery</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2551971a-3aa2-485a-a51c-fcb4c3bc5a45" InformativeScreenshot="3fa6a66a006d74ad1c66a9080e360ada" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Header Data' /&gt;&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4301/cmbVBAK-AUGRU' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Menubar  mbar'" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="SelectMenuItem_7" Item="Edit/Incompletion log">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Sales document/Create</x:String>
+                    <x:String>Sales document/Change</x:String>
+                    <x:String>Sales document/Display</x:String>
+                    <x:String>Sales document/Create with Reference</x:String>
+                    <x:String>Sales document/Create with Reference to Serial Number</x:String>
+                    <x:String>Sales document/Save</x:String>
+                    <x:String>Sales document/Create subsequent order</x:String>
+                    <x:String>Sales document/Deliver</x:String>
+                    <x:String>Sales document/Billing</x:String>
+                    <x:String>Sales document/Delete</x:String>
+                    <x:String>Sales document/Exit</x:String>
+                    <x:String>Edit/Propose items</x:String>
+                    <x:String>Edit/Delete unchanged item</x:String>
+                    <x:String>Edit/Batch Determtn</x:String>
+                    <x:String>Edit/Overall network scheduling</x:String>
+                    <x:String>Edit/Item</x:String>
+                    <x:String>Edit/Header</x:String>
+                    <x:String>Edit/Check Document Availability</x:String>
+                    <x:String>Edit/New pricing document</x:String>
+                    <x:String>Edit/Incompletion log</x:String>
+                    <x:String>Edit/Cancel</x:String>
+                    <x:String>Goto/Overview</x:String>
+                    <x:String>Goto/Header</x:String>
+                    <x:String>Goto/Item</x:String>
+                    <x:String>Goto/Back</x:String>
+                    <x:String>Extras/Packing proposal</x:String>
+                    <x:String>Extras/Configuration</x:String>
+                    <x:String>Extras/Costing</x:String>
+                    <x:String>Extras/Technical objects</x:String>
+                    <x:String>Extras/Documents</x:String>
+                    <x:String>Extras/Display batch determ.</x:String>
+                    <x:String>Extras/Price agreements</x:String>
+                    <x:String>Extras/Assign Credit Memo</x:String>
+                    <x:String>Environment/Display Originals</x:String>
+                    <x:String>Environment/Changes</x:String>
+                    <x:String>Environment/Display document flow</x:String>
+                    <x:String>Environment/Status overview</x:String>
+                    <x:String>Environment/External credit insurance</x:String>
+                    <x:String>Environment/Display material</x:String>
+                    <x:String>Environment/Availability</x:String>
+                    <x:String>Environment/Substance reports</x:String>
+                    <x:String>Environment/Order report</x:String>
+                    <x:String>Environment/Cost report</x:String>
+                    <x:String>System/New GUI Window</x:String>
+                    <x:String>System/Close GUI Window</x:String>
+                    <x:String>System/Services for Object</x:String>
+                    <x:String>System/Own Spool Requests</x:String>
+                    <x:String>System/Own Jobs</x:String>
+                    <x:String>System/Short Message</x:String>
+                    <x:String>System/Status...</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="25b46e73-e454-4eaf-a4de-50d7e21cd095" InformativeScreenshot="12b6e4f54ec8e84f7ec2feeecbf8d3b5" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create MBU Standard Order: Header Data' /&gt;&lt;sap id='mbar' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+              </ucas:SelectMenuItem>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Create MBU Standard Order Header Data End&quot;]" />
+            </Sequence>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Keyboard Shortcuts Back to Main screen" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back to Main screen" sap:VirtualizedContainerService.HintSize="917,96" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_53" Shortcuts="[d(hk)][k(f3)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Save Entry" sap:VirtualizedContainerService.HintSize="917,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_54" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm dialog" sap:VirtualizedContainerService.HintSize="917,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_55" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back to mainmenu" sap:VirtualizedContainerService.HintSize="917,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_56" Shortcuts="[d(hk)][k(f12)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back to mainmenu" sap:VirtualizedContainerService.HintSize="917,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_57" Shortcuts="[d(hk)][k(f12)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="99fcb116bf882be47f47dcdc12c1543e.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

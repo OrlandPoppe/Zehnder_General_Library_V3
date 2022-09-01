@@ -1,0 +1,289 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_SearchForEquipment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SerialNumber" Type="InArgument(x:String)" />
+    <x:Property Name="out_EquipmentNumber" Type="OutArgument(x:String)" />
+  </x:Members>
+  <this:SAP_SearchForEquipment.in_SerialNumber>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_SearchForEquipment.in_SerialNumber>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1093,2703</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_SearchForEquipment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_SearchEquipmentNumber" sap:VirtualizedContainerService.HintSize="968,2638" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToTransaction workflow" sap:VirtualizedContainerService.HintSize="926,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToTransaction.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionCode">IE03</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Display Equipment : Initial Screen" sap:VirtualizedContainerService.HintSize="926,673" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,384" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Empty 'Equipment' field" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f840f44-5301-4da0-bf38-babcef03c9c4" InformativeScreenshot="085c1839846ca465467279d9a415687f" Selector="&lt;sap id='usr/ctxtRM63E-EQUNR' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+              <ui:TypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:TypeInto.Text>
+            </ui:TypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="False" DelayBefore="2000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="f4" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="255f4a79-8a0b-4d75-8fe1-e21e7af20a07">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 3456, 1416" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="6bacf0a2abe196f9821701002d1f5b96.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*quipment*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="926,1681" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="892,1392" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Material Serial Numbers'" sap:VirtualizedContainerService.HintSize="850,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="O: Material Serial Numbers">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="16">
+                  <x:String>R: Address selection (service)</x:String>
+                  <x:String>A: Equipment by asset number</x:String>
+                  <x:String>C: Equipment by cost center</x:String>
+                  <x:String>D: Equipment by customer (operator)</x:String>
+                  <x:String>F: Equipment by technical ID number</x:String>
+                  <x:String>O: Material Serial Numbers</x:String>
+                  <x:String>T: Equipment by short text</x:String>
+                  <x:String>W: Equipment by PRT group</x:String>
+                  <x:String>L: Equipment by equipment list</x:String>
+                  <x:String>M: Equipment by serial number list</x:String>
+                  <x:String>N: Equipment by equipment list (service)</x:String>
+                  <x:String>P: Equipment by functional location structure</x:String>
+                  <x:String>S: Equipment by equipment structure</x:String>
+                  <x:String>U: Classification</x:String>
+                  <x:String>Z: Equipment by Fleet Identification Data</x:String>
+                  <x:String>Q: Choice of Equipment Using BOMs</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="570a44a9-45af-4598-adc9-305b68e63533" InformativeScreenshot="a8a7ca0b94b88ce930548acb33fddd94" Selector="&lt;sap id='usr/tabsG_SELONETABSTRIP' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Serial Number'" sap:VirtualizedContainerService.HintSize="850,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_SerialNumber + &quot;[k(enter)]&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7500c164-b01b-4a83-9f74-10641d155d66" InformativeScreenshot="7ccbf69e08844e5f4349b816b044691f" Selector="&lt;sap id='usr/tabsG_SELONETABSTRIP/tabpTAB006/ssubSUBSCR_PRESEL:SAPLSDH4:0220/sub:SAPLSDH4:0220/txtG_SELFLD_TAB-LOW[1,24]' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Matches Found'" sap:VirtualizedContainerService.HintSize="850,925" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="398,699" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="False" DisplayName="Press Enter to Select first Result" sap:VirtualizedContainerService.HintSize="356,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8d03dd84-9233-4d3b-9ec4-b46237fb6e65">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <uix:NGetText DisplayName="Get Text 'EquipmentNumber'" sap:VirtualizedContainerService.HintSize="356,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="179, 203, 146, 20" ElementType="InputBox" FriendlyName="'11963882'" FullSelectorArgument="&lt;sap id='usr/ctxtRM63E-EQUNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtRM63E-EQUNR' /&gt;" InformativeScreenshot="7da4ae12c555475b513ab032849690d4.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Display Equipment : Initial Screen' /&gt;" SearchSteps="Selector" />
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[out_EquipmentNumber]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="356,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;[SAP_IE02_ChangeEquipment] - Equipment found with EquipmentNumber: &quot; + out_EquipmentNumber]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToHomeScreen workflow" sap:VirtualizedContainerService.HintSize="356,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToHomeScreen.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="398,594" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="356,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;[SAP_IE02_ChangeEquipment] - Serialnumber does not exist.&quot;]" />
+                  <Assign DisplayName="Assign Empty EquipmentNumber" sap:VirtualizedContainerService.HintSize="356,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_EquipmentNumber]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="356,116" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="esc" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a4cbd0bf-943c-4cd8-993a-cc28156b1df1">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToHomeScreen workflow" sap:VirtualizedContainerService.HintSize="356,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToHomeScreen.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="0, 24, 775, 146" ElementType="Container" FriendlyName="'UserArea usr'" FullSelectorArgument="&lt;sap id='usr' /&gt;" FuzzySelectorArgument="&lt;sap id='usr' /&gt;" ImageBase64="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" InformativeScreenshot="483e82b41663cbfafb9192817e04c064.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*ntr*' idx='*' /&gt;" SearchSteps="Selector" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="saijm7ykNEC_hIP-lfvJnA" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="fc16e748f7b0736b2bcc9967004c364a.png" Reference="lTMLQeuSGEut97auj2ZPLw/KppLjSoeQk-3rvuii8OnEw" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Restrict Value Range' idx='*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

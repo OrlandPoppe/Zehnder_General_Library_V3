@@ -1,0 +1,14 @@
+﻿{
+  "Id": "SgdBm9wtbEezNioxBLI3og",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/SgdBm9wtbEezNioxBLI3og",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ",
+  "Name": "Button_GreenCheckMark",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-06-15T14:37:24.2486011Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.4.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-15T14:37:24.2486011Z"
+}

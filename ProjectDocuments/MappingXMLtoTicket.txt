@@ -1,0 +1,40 @@
+xml_package
+360031283897 xml_Firstname
+1900005683313 xml_Lastname
+360031186598 xml_Street
+xml_HouseNr
+1900005683333 xml_ZipCode
+360031283917 xml_City
+xml_Country
+360007831237 xml_Email
+360011536717 xml_Phone New telephone
+	(Telefonnummer Standort des Produktes 1900005683353 
+	 Telefonnummer des installierende Unternehmens 360031283877
+	 Tel. Terminvereinbarung 360007587457)
+360005893718 xml_SerialNumber	
+xml_Rented (yes No)
+
+xml_DifferentAddress
+xml_BillingFirstname
+xml_BillingLastname
+xml_BillingStreet
+xml_BillingHouseNr
+xml_BillingZipCode
+xml_BillingCity
+xml_BillingCountry
+360004953272 xml_Installer
+360031283857 xml_InstallerName
+360031186538 xml_InstallerStreet
+xml_InstallerHouseNr
+360031186558 xml_InstallerZipCode
+360031186578 xml_InstallerCity
+
+xml_Body
+xml_NewsLetter
+xml_AcceptTermsOfConditions
+
+var_TicketBody
+var_PostBody
+var_PostResult
+
+var_PostBody.Replace("xml_Firstname",xml_Firstname).Replace("xml_Lastname",xml_Lastname).Replace("xml_Street",xml_Street).Replace("xml_ZipCode",xml_ZipCode).Replace("xml_City",xml_City).Replace("xml_Email",xml_Email).Replace("xml_Phone",xml_Phone).Replace("xml_SerialNumber",xml_SerialNumber).Replace("xml_Installer",xml_Installer).Replace("xml_InstallerName",xml_InstallerName).Replace("xml_InstallerStreet",xml_InstallerStreet).Replace("xml_InstallerZipCode",xml_InstallerZipCode).Replace("xml_InstallerCity",xml_InstallerCity).Replace("var_TicketBody",var_TicketBody)

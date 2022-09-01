@@ -1,0 +1,974 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_Change_Equipment" this:SAP_Change_Equipment.in_SerialNumber="789752502" this:SAP_Change_Equipment.in_MaintenancePlant="1740" this:SAP_Change_Equipment.in_SoldToParty="11103616" this:SAP_Change_Equipment.in_PlanningPlant="1740" this:SAP_Change_Equipment.in_PlannerGroup="zde" this:SAP_Change_Equipment.in_MaintenanceWorkcentre="SERDE_CS" this:SAP_Change_Equipment.in_MaintenanceWorkcentrePlant="1740" this:SAP_Change_Equipment.in_SalesOrganisation="1740" this:SAP_Change_Equipment.in_DistributionChannel="Z1" this:SAP_Change_Equipment.in_Division="Z1" this:SAP_Change_Equipment.in_SalesOffice="DE01" this:SAP_Change_Equipment.in_Function="AG Sold-to party" this:SAP_Change_Equipment.in_BuildingID="51057458" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SerialNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaintenancePlant" Type="InArgument(x:String)" />
+    <x:Property Name="in_SoldToParty" Type="InArgument(x:String)" />
+    <x:Property Name="in_PlanningPlant" Type="InArgument(x:String)" />
+    <x:Property Name="in_PlannerGroup" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaintenanceWorkcentre" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaintenanceWorkcentrePlant" Type="InArgument(x:String)" />
+    <x:Property Name="in_SalesOrganisation" Type="InArgument(x:String)" />
+    <x:Property Name="in_DistributionChannel" Type="InArgument(x:String)" />
+    <x:Property Name="in_Division" Type="InArgument(x:String)" />
+    <x:Property Name="in_SalesOffice" Type="InArgument(x:String)" />
+    <x:Property Name="in_Function" Type="InArgument(x:String)" />
+    <x:Property Name="in_BuildingID" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>932,2080</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_Change_Equipment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="41">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Core.Activities.DateModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>Google.Apis.PeopleService.v1.Data</x:String>
+      <x:String>Google.Apis.Requests</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Google.Apis.PeopleService.v1</AssemblyReference>
+      <AssemblyReference>Google.Apis</AssemblyReference>
+      <AssemblyReference>Google.Apis.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_Change_Equipment" sap:VirtualizedContainerService.HintSize="602,2015" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: SAP Easy Access" sap:VirtualizedContainerService.HintSize="560,1923" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1634" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="mes_SAP_Type" />
+              <Variable x:TypeArguments="x:String" Name="mes_SAP_Nr" />
+              <Variable x:TypeArguments="s:String[]" Name="mes_SAP_Data" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message Navigate to IE05" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Navigate to IE05&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Navigate to IE05" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="/nie05">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="56, 48, 142, 24" ElementType="InputBox" FriendlyName="'OkCodeField okcd'" FullSelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJIAAAAcCAYAAACKweYmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADqSURBVHhe7dq5DYQwEEZhV0sfLsRtOKUE90DinAa8zHIsx1iLrQnfJ/0Sh8ieHOEm54q2eZ4Ze0xrRfYNSfuAsbe7hDSOI2PNU0MCWhASTDSF5Jb3gOYSklwQEnrsIckICd0ICSYICSYICSYICSYICYccffEhbXdnuUTvS0h5u38iJJxIMMMtpvXZoAb2Q0i4SSUMS0xRTp9cUlgjqp9FK0KCYotJTiIf/0YkCAm6vMQU3kUkCAkmCAkmmkICaggJJggJJi4h8Yckeu0hvfpDEqghJJiohsRY6x4hMda7IyRt2geMaa1MzpUPr5Cxzqzmmx8AAAAASUVORK5CYII=" InformativeScreenshot="9ff1aea1e6c8893fb95abc17e8b5fb35.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm menu call" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TextField Serial Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[in_SerialNumber]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="253, 238, 132, 20" ElementType="InputBox" FriendlyName="'TextField Serial Number'" FullSelectorArgument="&lt;sap id='usr/txtSERNR-LOW' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/txtSERNR-LOW' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAAYCAYAAAAh3LURAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVGhD7dbBDQIxDETR9F8RgsM2Bms0IWOcuIX/JB92zl/ajPd9h878zcamm4GYRzY231hbXNfFcXkOZgaiD42A1BbyDUIgMLcwfzEEgpNacBf5SCUQ2BbI2ggEyYHI75H64ReDv9rCUBwEgsotqAsCQaMW3MUMxCMgWyBrIxAkByI8UtHUFniDoHEL8xdDIDipBXfBIxXNFsjaCATJgQiPVDS1Bd4gaNzC/MUQCE5qwV2Mx/MVOo0c51Mc6iIfqS5GZ2xs+Uito7CxRUR8AbDs5GlInU2KAAAAAElFTkSuQmCC" InformativeScreenshot="fafc2c0910e0e9a053f71de349ea8a19.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Equipment Selection' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Serialnumber entered=&gt; Excute" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(f8)][u(hk)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Equipment'" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Serial number found&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,322" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'No objects were selected'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_2">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="12, 1019, 1912, 29" FriendlyName="'No objects were selected'" FullSelectorArgument="&lt;sap id='sbar' /&gt;" FuzzySelectorArgument="&lt;sap id='sbar' /&gt;" InformativeScreenshot="021a7bff0a6d8206ab2b7e3f20f30a7c.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Equipment Selection' /&gt;" SearchSteps="Selector" />
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="s:String[]">[mes_SAP_Data]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <Throw Exception="[New BusinessRuleException(&quot;Change Equipment screen not shown!&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="15, 150, 111, 20" ElementType="Text" FriendlyName="'Equipment'" FullSelectorArgument="&lt;sap id='usr/subSUB_EQKO:SAPLITO0:0152/subSUB_0152A:SAPLITO0:1520/lblITOBATTR-EQUNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUB_EQKO:SAPLITO0:0152/subSUB_0152A:SAPLITO0:1520/lblITOBATTR-EQUNR' check:text='Equipment' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAYCAYAAADJcMJ/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVGhD7ZZRjoQgDIY9FwfiPJzGbHYe5iC+7T1WllaKtVNRZ7IZcfolRKCA5v9B2o3jGKkQ1tdmXzGT0AZZXxt9aKbRPvf7PXa5bjROMdNOZ/ugmfLfa7SJmXkhiplG++gJ0BCi67rYyeL7POAJYE0X4pCb72GIwbkY3vsR/4aeAKGZPr5g3Un5ADMf7sxNM/vo+YmlEydPH29TPT+Dp/lM3PzeEFxZG34GvTYWjVlZQ12fj8+Ff+sFeMLMSZTyxyWTZB3QYrj2PH8A4/iYFHPkTO9R9PIuaOexYPBinFhDm5OC1z+Zv9xIIAuy2MUkEMaY0dDmQhbhElpMjsFTngWuzQdKG+bwzbZ3jQ8wM9dnQIC1k7nY6QkuVk1Iqssxz5gJz4fNZmYWMxenE8VaMVPGuFhbMTJCik1ztJjalieTUV3jQ36zu81EIVfuJJw3i4WJC49BXYiNd+Z8gVaMSLD24s5M9H7fhoB55dsvRsVM+RtLhVQAA6kv7XQuFpqTYz4wIUlUuXZF+Hp7SsTKOkc2hPbuC6AnQEeQYm1xdLyxGz0BOoKZeRr0BMhoEv3ONJpkYebX981Kw+X1BMh4Oz8pM6dSEiCwlAphfefvAxOnvhj/AN+orSqjgwzbAAAAAElFTkSuQmCC" InformativeScreenshot="8e83f056b4d3d88aa95dcb3a07101734.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : General Data' /&gt;" SearchSteps="Selector" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:LogMessage DisplayName="Log Message IE05: Cange MaintenancePlant into:" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;IE05: Cange MaintenancePlant into: &quot;+in_MaintenancePlant.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <Sequence DisplayName="Sequence Change Mantenace Plant" sap:VirtualizedContainerService.HintSize="484,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Change Maintenaceplant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(shift)][k(f5)][u(shift)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DisplayName="Type Into 'in_MaintenancePlant'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[in_MaintenancePlant]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="116, 33, 48, 20" ElementType="InputBox" FriendlyName="'4000'" FullSelectorArgument="&lt;sap id='usr/subSWERK:SAPLITO0:0212/ctxtITOB-SWERK' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSWERK:SAPLITO0:0212/ctxtITOB-SWERK' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIHSURBVFhH3Ze/asJQGMXzLE6OvoC7DyB5A7NJt04dEpz6AKIXcXK2ECxS2oBdM0lHEUroUCdxFHQ4vd/V/Lu92uQqGnvgYHI/Se4v5375Y3wZBlS+lFTnJutKABVNZwEyHt4L4cFgIIDoV8cpoGsrnMPZEiKx54+rmERzWK/XAoh+dfz/gMSRuIoElLTPLFjWMTP4if/fAJCD8UKUlZr2bbhBDqBWowLDqKMpjTdrFZT40jDK92idoUaSgQLfxeNdnIbTn0JmywnURpWfuFpOA7UadVTt/X6P1xujk2ukFJDPYHc8fC5FiWuL1aQLy+ljuh8h5QKidGgCpgSU3t9Bn1ojxUA+mDXEtxhNazvnUDypUNmB+BUs1dpi+zhQel+3RoqAeDqWF0UjaYEnZxwtvcxAtNbN3t8Tkfd1a6QQKHBtdGYbMfZbK0yseNllBjLLvHGpeUMfXDqjI8sqe42UKaHtHF2dhJKWryw1t5lo7pLU+Do1UgQkesiDCmkxdhLPoNzPId64YUL7fgpt1uLk5FuzTo0UA3FTSs4Qs2W49DZYep0dhO0iSEAknSmhS5iUAiIHLpgdp2EzHy7jifDnE+PbKqhiAykdwA0hFVA3+nJ6GKpw30M0qWxv2wSVvsORbxhIbQH08vomDlYE02c0zUn+tM7qKKEi6ZQ5CSCVLyXVucl6An4AW3LbthEyjeIAAAAASUVORK5CYII=" InformativeScreenshot="3df17fc74ee67238519263f9746d4660.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Change Maintenance Plant' idx='*' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm entry Maintenance Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm entry Maintenance Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_20" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm entry Maintenance Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_21" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm entry Maintenance Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_22" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+            </Sequence>
+            <If Condition="[in_PlanningPlant = &quot;1740&quot;]" DisplayName="If " sap:VirtualizedContainerService.HintSize="484,560" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="242,372" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="text_WarrantyDate" />
+                    <Variable x:TypeArguments="x:String" Name="text_NewWarrantyDate" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Sequence Organisation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Organization'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="185, 240, 95, 22" FriendlyName="'Organization'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03' check:text='Organization' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAAaCAYAAACjFuKcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVGhD7ZntccMgDIaZywMxj3fIDv6ZRTyMisSXEMatC7XJVe8dF2xACD0SyV0MqKaRwphICmMiKYyJZF6vF2iboxEM1XPi8VcYD0thTKRxMDYLxpjUlnUPAzdoX2FZVri24w7rskDh5q/sjNMQGPu6OAAWtvDsyIC9G8hlHcB4WANg4KEM2EzCiyolAAoZt1qsmgjNA8vV5APjweb3CWhhI8/nY5tYa5xTx/a8z/y9wYrglYH9NF7vdehHp/phkNO8KqIw2MHRcLAMzAcjVw6by0XrGjYQNg9c7JMaCcLt0RyxZ7Ij1su9Wn506o9hBKdlsKo1DRgUFAZD2uABYmNUDRUJFAdwAkPuxf0786NT91UGd7jKphJGebX8IAiyL/w5tOdmN2FU/rFKOfOjU/0wuKNceKAYlG8PwGDwdWT7GozN3eXFD4eWvaIfFO3gZwH0UyrDyWeedL7+8s0O+/EEkA7vD1tcMex9ZYM/x36V0Sf2nBBckUTJpkgwbvfMj04NgUGiDIxXgcjOI4f5fJehORM9KP/egr1QGfkXTmgUzYY9FK5LY86WtBnHeKLxOSj53KFxMHo08ECfrMdg4BWRMri44v6v5qgMFamA8X6/QdscTWFM1PRv14mkMCaSwphICmMaAXwBnpnS24F+hH0AAAAASUVORK5CYII=" InformativeScreenshot="497eeaf96cb0950764daa280767f3139.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : General Data' /&gt;" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Planning Plant " EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="[in_PlanningPlant]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 502, 48, 20" ElementType="InputBox" FriendlyName="'4000'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOB-IWERK' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOB-IWERK' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVFhH7Zc9bsJAEIX3LFSUXICeAyDfAHe0qVJY4gwosig5gUWKKGnSItGkjNJYkTgCAuVv4jd4jL2sjVlW2IrypCezM/7Zz55ZbPWuFJn8Q8QWydh1zHRtWFR1rCnGQKZEkzEBysdEp2IMBKnb51Z4Pp8zELY2LgA1LZmDzMlGWcnJycL7l0YMYQ7b7ZaBsLXx3wPKmqlFQHkvQ598v9pBFGf7M5CcDDJd7BqGTEDw7vOb8yZ9vYVFoDReCjQZ9UipIY21+HjQo05SGqp7QxMHOcgZUHnJTamfXLjfLQJNRkPqB+l4luRHi4tz0B4opigwl1bed68ffMwRUFUP4elgAp4GVBzvoS/NQQeggFYbDhm1WQUWQMkd7Aym/LsaqDi2zUHOgCAdCLXuzU5PRB/b5iAnQBxNpAN53aRx0bzi0tJZVJRV/RzkDKish8T6nUVze7nm7miNb5ODzgEKojXtdmvet/aiwI0rTyjtJ7E3ODw5fWm2yUHnAQEipni5pDiFqQF0PUPnAx1ACkBQu4DM/z15lwLJq3p7gBy/bTepfyCDGejh8YlP1gbjMxpz0j+t6zrrIUhWPFkooCZiUjX5GFQnxkAmQ/rOkOuY6dpwnWOPY0S/mY3fAZYCUFIAAAAASUVORK5CYII=" InformativeScreenshot="6274d15c29b9012a291fec541688faee.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Organization' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Planner'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_5" Text="[in_PlannerGroup]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 524, 41, 20" ElementType="InputBox" FriendlyName="'CTextField Planner'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOB-INGRP' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOB-INGRP' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAYCAYAAABurXSEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVFhH7ZdNDoIwEIU5Ladw0VsY15yAndGNWxIvYNw0JhyBQPwbnaHFAqMgSGuNL3mBvEynX8hAaHAIAuCsdTWs9W7G9UdrvVrLZQRtBlzRFNmYfQmabmYba46iiKDxOsQ1aBvS++gnPUROoPM8J2i8DnE1015Bq17WoU0nixDC8LVFLKt6gnYxHk0Xp4uqaOu8X9ShEfgP3aESWkIs+DEwPd8daQ0LjbIPLWCbqZBRthXPoSm9yztoN+MxAtrdTP8otIhTKIqUar15EUtQCTJJQCpgglY1Xwz9gK1BuxkP/tts+im0t395XkLrZjb0Mejlak3NbBmPTLhv8xjV19V4aGtNnY3Zl6A5dy1E9c24/ug+a9sZwA17ZFMLCSZ55gAAAABJRU5ErkJggg==" InformativeScreenshot="941671141730637222c3bb2272cbf577.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Organization' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Maintenance Workcenter'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="[in_MaintenanceWorkcentre]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 546, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Main'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOBATTR-GEWRK' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/ctxtITOBATTR-GEWRK' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhH7ZhBqsIwEIZ72p7iLXILcd0TdCe6cVvwAg83QfAI0qJPx86QqdVOq8ZsnjMf/BR+kkI+TCrJdlkGUi4AXZhv6KS1Yh7HIa90JPDZIOSbu08cdAKzn7XKFEVBAvEZExJIJtuXaYPXzA5iUC+wrmsSiM+Y3G1hbSQRyIeiZoH9VPMc8nw6rvTdeBPYk8dpTucwYsjfdj4UiJjASIGhVyzQQ+nkrdrP7PdIc0SBurcwCnSwOYRS4LBx4wLtDDSB0SQTiJjAUApMCqS2xQSGUgAFunIPTbOnsfYRCbwnEKV58FUFPsgjgXYGviPwJs4EttwEyv/9+hkVaLcxCW5j+GXaSCZQ9xZOIHCxXNHLNAav5dHB41X9q+l+gQx/VDR1nzgggVKYsYn/tZPWimGm5g47gCvvuOuGeYaXywAAAABJRU5ErkJggg==" InformativeScreenshot="8d647e26bffedacdc84a4deb4ccce03b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Organization' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Maintenance Plant'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[in_MaintenanceWorkcentrePlant]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="225, 546, 34, 20" ElementType="InputBox" FriendlyName="'TextField Plant'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/txtITOBATTR-WERGW' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102B:SAPLITO0:1062/txtITOBATTR-WERGW' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACZSURBVEhL7ZZBCoAwDATzdP/SfsAX9Cv+ojcjG9yigtCekkMGFjS5DO2CyqmqCOG798zEyHcJvGZSSlGm1qqtNdcACIo93UDOE4jx5KT3rkyK/UAxINt+hBIjIcXsKqOJjY6l2ARZ/lWy/Ku8xI5bKpIYCPdJIiHF7CqjiY2OpdgEr/JD5hksPUPGrzWPkMbAc2Zif0u/meoFlmTMOl27FBYAAAAASUVORK5CYII=" InformativeScreenshot="8fd571b1b10bedac84348b682c5320e2.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Organization' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_14" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts Confirm Plant" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_15" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                  </Sequence>
+                  <Sequence DisplayName="Sequence Warranty" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message Warranty Data" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Warranty Data&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Warranty data'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="362, 240, 106, 22" FriendlyName="'Warranty data'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05' check:text='Warranty data' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAaCAYAAABW6GksAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVGhD7VYxksIwDORdPIj35ANX0VOmhCfwAIpccw0NNDQ0OkuxYtmREycXZs4e78zOQGJH0q7kZAcVWaIalyl2u69vqMyHjGpcZmRU4zLj8XgkVuMyI6MalxkZ1TjJ0xNujyfstXv/hIwk4w4dwO36M7oGYZGXF0B399Z9nj/QPN7QnLR7C5lk3IbxVpCRNnFoiFfQHVra/oKDWLe/vkcGf57VuDixIGkS/jeThVPXXnidKwgNlBjMtMI0OK34vOB/k7QPwcJhTHuJ8XhBa665vAxHjSdItQnYdXoNWrwnHGJ5f4CMxHdcnzCLMUyWEcQlaaZQE4eEsUJbkQZRw/+p+zwjlAkIjmy/wST9uijOXA1avOja7clI/jiRx+Ch48SEWYFYjqLQUJiYUMTUfZqQeJTzCSF/BySRg5NEzUfGmDFu9v7fyEg2znW5nCyXJBoru9o/amwhkwas3acLxR9U9LzYB5M3uYZBHDWXSDx97fZkpBvHnYvFCSEw4fYSFIOCDJ0s7k0aYLhqny5kvwbfdxMiTj03losWL7p2ezIWGGe72CTlvS+w2A4FcgJ4XY73Eydu7T79HYYCmgrlvhGxGZ3IFN+uj+Zi/ofxptZuTcYi4yjBUVJYfPgl1V8jyK6fMWD1PhLLQlyPf5QI0rT0wAZ0z43kgvdG8SbWbkzGIuPyIorJx1c5ZBRrnHd8FURGwRNXJhnVuMx4Pp+J1bjMOBhnJ68iMxRpHHdnySjOOHmslGxeUcaFpjHLA8Av5OQPAf00p18AAAAASUVORK5CYII=" InformativeScreenshot="b7e2ddc94cb40a62b07e345642cf6a5f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Warranty data' /&gt;" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text Get Productiondate" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="127, 216, 76, 20" ElementType="Text" FriendlyName="'07.02.2018'" FullSelectorArgument="&lt;sap id='usr/subSUB_EQKO:SAPLITO0:0152/subSUB_0152D:SAPLITO0:1527/ctxtITOB-DATAB' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUB_EQKO:SAPLITO0:0152/subSUB_0152D:SAPLITO0:1527/ctxtITOB-DATAB' /&gt;" InformativeScreenshot="685956d037c12467a2a15f8c8b5988a6.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Warranty data' /&gt;" SearchSteps="Selector" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.Text>
+                        <OutArgument x:TypeArguments="x:String">[text_WarrantyDate]</OutArgument>
+                      </uix:NGetText.Text>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NGetText>
+                    <Assign DisplayName="Assign Calculate warranty Date" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[text_NewWarrantyDate]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[left(text_WarrantyDate,6).ToString + (conversion.Val(right(text_WarrantyDate,4))+2).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Warranty Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="[text_WarrantyDate]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 304, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Warranty Date'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1098/subSUB_1098A:SAPLBG00:3400/ctxtWCHECK_V_H-GWLDT_O' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1098/subSUB_1098A:SAPLBG00:3400/ctxtWCHECK_V_H-GWLDT_O' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABjSURBVFhH7dKxCQAgDAVR959ItMhoEQsFO/Xae/CblEdKCjEgtANGhHvYcgTUHQNCBoQMCBkQMiBkQMiAkAEhA0IGhAwIGRAyIGRAyICQASEDQkfA2nrOzaO737I/UH8MiGQOmqRVFF5a+LoAAAAASUVORK5CYII=" InformativeScreenshot="d428030486633050fc4b45f4b81029c0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Warranty data' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_9" Text="[text_NewWarrantyDate]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="407, 304, 76, 20" ElementType="InputBox" FriendlyName="'CTextField Date'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1098/subSUB_1098A:SAPLBG00:3400/ctxtWCHECK_V_H-GWLEN_O' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\05/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1098/subSUB_1098A:SAPLBG00:3400/ctxtWCHECK_V_H-GWLEN_O' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAYCAYAAABtGnqsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABjSURBVFhH7dKxCQAgDAVR959ItMhoEQsFO/Xae/CblEdKCjEgtANGhHvYcgTUHQNCBoQMCBkQMiBkQMiAkAEhA0IGhAwIGRAyIGRAyICQASEDQkfA2nrOzaO737I/UH8MiGQOmqRVFF5a+LoAAAAASUVORK5CYII=" InformativeScreenshot="43dcda36d750680573f8241f5a9dd706.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Warranty data' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                  </Sequence>
+                  <Sequence DisplayName="Sequence Enter Sales and Distribution data" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Enter Sales and Distribution Data.&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Sales and Distribution'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="241, 240, 144, 22" FriendlyName="'Sales and Distribution'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06' check:text='Sales and Distribution' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAaCAYAAABRhnV8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALRSURBVGhD7ZvLceMwDIZVlwpiPWpgT+5BRzeiy3bCJSCC/gGRkm0ycTKLL8OJ+MCTIKUcMkXHGYgXlDOUafrzNz86Tj9eUM5QuKBut5s3b0Oa31BON1RIgheU081nCmpb4jwvccvdj/ITfPlJ+ehkTEFRQqYpKcjtKjm/paBsXKmFNc8Rp3FscZnnuJwFKfJv56Ni421dYxhQUGsMJtFrCGn0hA8HrTjzheYmiIX7U5xPq0R4oqCEt/Pxgo1vor+gbNKBbZnV6S4boRJISZE1OjlrqMgCV/qXIl85xSDXvFFrsa0hyeQxiEP7ukJMudE65VfSIfJqnBr4CzaY0se85Qa6eD09l/mjzmZ+Ohh2Q12eWg4uOw5B00YUWdosSQY+JxvLq/qTT+XWVLr2jShz4MsB1mMPC8Vr4qj6Wrk9rF8ib8b5oIg+WcMzCdVv2OB5Eyf6aOzp/PTxJd9QxVEFBF+Cps3BDYPNejnImv4M9tlXsGnXInYtAxslslVfzzY7I/3auNhtyeydtg0rh7k91dnHmIJCKLnieEK/lkxA9BsKUa3hZD3G60V6oX9fovt288+Syf49cUOln6OvHQXFNjoL6lDku4/qIOwTx34H4wsKHefikg2B4EsA9oaqo14ByKX+DPZfSSbNWf/QZkX24evJZudu6dfG0Qb6oNae2LBy6el33FApwer7iQPZHefkytUC4xiA+oZKyF+I2xIeiaJNrFxRz+hnVB8Sm2gWK8E6zWbibZn1rg1fKTbldssvM84f+LW4Ejxn1tZtwMEmyC+Ra/mRuz0M+yg/vHYYmJtDDNUbZA+8yEsG+CaQcTxpyDP6E7YPuudUwM1kkpzoz626eS1fUZ7Wtfyydow/XPR5LiwVHSiHNpRe45fVYWy+yxe88pz/GS8oZyheUM5QDgV1v9+9eRvSvKC8DW3+TwrOULygnKF4QTlD8YJyBhLjP/9vvWEqCjtfAAAAAElFTkSuQmCC" InformativeScreenshot="f2da0315526ce897165a2b8bf1db8807.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Warranty data' /&gt;" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts &quot;Manual Transaction&quot;" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][d(ctrl)d(shift)][k(f2)][u(shift)u(ctrl)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'To customer'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="11, 99, 118, 20" ElementType="Toolbar" FriendlyName="'To customer'" FullSelectorArgument="&lt;sap id='usr/radRISA0-V_TO_CUST' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/radRISA0-V_TO_CUST' check:text='To customer' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAYCAYAAAA1Zem1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJnSURBVGhD7ZhBjsIwDEU5Vw/U8+Q0PQVIsC4ChOAAgECCBZl+j90mqRM0ixnoJE+qKjuOa/JxGpjZQhYUoTOhCJ0JRehMKEJnQhE6E5JC3243u16v7Wq1svP5nO6w4S9MC1Xo5/Npj8ejXSwWJHB4wY9xxBWmgSr0fr/vRd3tdvbxeJAfd9gyhjiP1thqNrMz9aptw2F/S2tNVVnTspkpI6Evl0sv5Ol0Yq8P/BKDeBUS/V3iuhShwUjozWZDAh4OB/boYBxxiFeJCe11/SsBIJKzK1TGtpiPO0dQPsdu6iG+Mo0/X3IgMFYH121M1c+puw8x5HVrdusLcnTPMTTnE77sitBy8Lrf7+zRwTjiEK/CC+Z/yO+FwcIRTT0svAItbh/MBMJ6tpevE5lWXuvoRB1UN74kPAFjLHZvcyzq8+KCHGHp72QktBzAXh20MI44xKtoQocidaN1tKsxFtkR3Byu7QktKEKn6kjlB70d1pfI8QH8bUePhAg6y0WbD6ILTwblc7fcb18gdKqOZP4OsXHn5wzXhIT+1Xf0yJfoaG0+CP2RRW3xjiV/pKNjdYT5onbY0Q6Rmt7JSGg5dWNLPp/P7PWBX7b4n526gw5Wt1qBuzNsd8o7CEfvcc7Rmu4QJcmQm+cixk+TqCMqLOPY3ju6o6n584ZzPoCR0GC73ZKIuFK/oxEXhQRRvvHkl60u0hE9LLbEszKteyI2zqJCMIl1c7vPlNhYHaFISVuvbzTnA1CFln/GRFDtKv+MTQtVaOF6vdJ/28vlksTFHTb8hWmRFLrwfyhCZ0IROhOK0JlQhM4Ca78AN+OVgE2qVYAAAAAASUVORK5CYII=" InformativeScreenshot="829a91a28b2049ac4dd1bfce7858a4cc.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Change Equipment : Manual transacti' idx='*' /&gt;" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_16" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Sales'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_12" Text="[in_SalesOrganisation]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 304, 34, 20" ElementType="InputBox" FriendlyName="'CTextField Sales'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VKORG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VKORG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVEhL7dAxCgAgDARB//8i0SJPi6RQsNzKE27gmlRLWorSD4sIiW1X2GsOoxxGOYxyGOUwymGUwyiHUX+E9TGzVkeFbedjakTDMhc/UuLkjRx1ZwAAAABJRU5ErkJggg==" InformativeScreenshot="879b6a1de3818c77f84b2884417c6e80.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Sales/Distributi' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Distribution'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_13" Text="[in_DistributionChannel]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 326, 20, 20" ElementType="InputBox" FriendlyName="'CTextField Distribution'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VTWEG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VTWEG' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABFSURBVEhLY/hPY0A/C/bv309VDAMoFlALjFpAEIxaQBCMWkAQjFpAEIxaQBAMMwt27Nr9H4RBgtTEMAD3Aa0AjS34/x8AVnK82RT/S9gAAAAASUVORK5CYII=" InformativeScreenshot="864c67619ac64ee457c29cf7a1808d81.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Sales/Distributi' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Division'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_14" Text="[in_Division]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 348, 20, 20" ElementType="InputBox" FriendlyName="'CTextField Division'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-SPART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-SPART' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABFSURBVEhLY/hPY0A/C/bv309VDAMoFlALjFpAEIxaQBCMWkAQjFpAEIxaQBAMMwt27Nr9H4RBgtTEMAD3Aa0AjS34/x8AVnK82RT/S9gAAAAASUVORK5CYII=" InformativeScreenshot="260085451b7d80f6d622a097f3db4902.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Sales/Distributi' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Sales Office'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_15" Text="[in_SalesOffice]">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="148, 370, 34, 20" ElementType="InputBox" FriendlyName="'CTextField Sales Office'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VKBUR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpT\06/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1070/ctxtITOB-VKBUR' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAYCAYAAACWTY9zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVEhL7dAxCgAgDARB//8i0SJPi6RQsNzKE27gmlRLWorSD4sIiW1X2GsOoxxGOYxyGOUwymGUwyiHUX+E9TGzVkeFbedjakTDMhc/UuLkjRx1ZwAAAABJRU5ErkJggg==" InformativeScreenshot="d667017ba40c90158ed371dabadfe83a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment : Sales/Distributi' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Confirm 'To Customer'" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                  </Sequence>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Sequence DisplayName="Sequence Change Equipment Partners" sap:VirtualizedContainerService.HintSize="484,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Start Connect Partner to Equipment" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Maintenace plant connected to: &quot; + in_MaintenancePlant.ToString + Environment.NewLine + &quot;Start with Connect Partner to Equipment.&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Change Equipment Partners" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][d(ctrl)][k(f2)][u(ctrl)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NClick ClickType="Single" DisplayName="Click 'ComboBox Funct' SoldToParty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 281, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVGhD7dohDoNAEEDRVXW9QA/ILZrsGTBcoQ5RXVtTDLpuk71AXdWWgYaEMsCmjPyTPLOM/NmQgAvOJU2MEVikNSP6oJqmAXabBBVfb+BvBAVTs6BOx0NPWwa2EBRMjUHJGztBYS9pSIagYIKgYIqgYIqgsKqtfTpXD+VZSBfvU3kPk3OCwgYJp/iJajgrlNAIChkeqSy6qGq5jUK6VUNMrbJLUMj0jUpuJn9VYxIEhXzPLqpqOSZBUDBFUDBFUDA1BsXHYViQhiZ/G2hLQC6CgimCgqlZUMBeY1AahlkbrZngXPoADmCfa2XK3skAAAAASUVORK5CYII=" InformativeScreenshot="7da19bd44cf2ff50cbff86485af12128.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'ComboBox Funct' SoldToParty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Sold-to party">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="14">
+                    <x:String>Department resp.</x:String>
+                    <x:String>Sold-to party</x:String>
+                    <x:String>Contact person</x:String>
+                    <x:String>Endcustomer</x:String>
+                    <x:String>Vendor</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Position resp.</x:String>
+                    <x:String>Error Code Resp.</x:String>
+                    <x:String>User responsible</x:String>
+                    <x:String>Person respons.</x:String>
+                    <x:String>Ship-to party</x:String>
+                    <x:String>Installer</x:String>
+                    <x:String>Sold-to original SO</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 281, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="" InformativeScreenshot="d1951dc546bbc34838fc219d8c8e60a1.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NClick ClickType="Single" DisplayName="Click 'CTextField Partner' SoldToParty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 281, 102, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAYCAYAAAASy2hdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVGhD7dlNCsIwEIbhrtx5AQ/Yc+QW4ron6DEKuYC4CUIuIEjqHyOTai0ySm3a1MA38NBNUJiXCrbZPstIYq2FANJOmXS2Dx9Kaw0RhOy6DWUPJ5hQURQ+FF+HQKhIeHjXQ6cNtVouPOlLIJxzzofi6xAIFQkvOygU31YINb33xVebnPL8O1Wa9jxCRdKN9FRfbrx+ca67DULNoRvoCaH+kHOGSiX/xHWtt2eEmlMTSpE++g7iHLVCqLkhVCIQKhEIlYi+oVRpqa6tP4tQM+gfiuMYMlVF5hEJoSL6LdQrEEJF1oSS/zt1fQyFh7Jx8LJHeXoufTiMh5eNUAngZSNUAvh1Ou/6/RV7X20omF7Irn0oCSZspJ2yYUN0ByFEkxzV1l+hAAAAAElFTkSuQmCC" InformativeScreenshot="572ba044c9357a4275872c1d9de5fefc.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into SoldToParty" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_18" Text="[in_SoldToParty]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 281, 102, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACCSURBVGhD7dqxCcAwDAVR7T+bpwh4gXSpFGRwILjWVXfwiepXmsQVkXtzTte0Mcb6Rh21At+361vM+1lHgVtfZVwJDiU4nOBwB7j1Jjic4HCCwwkOJzic4HCCwwkOJzic4HCCwx3gPl71Jjic4HCCw33gdWzwfbu+/X6TsL4KOzPzBSMOmYwwQYdGAAAAAElFTkSuQmCC" InformativeScreenshot="572ba044c9357a4275872c1d9de5fefc.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts SoldToParty" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NClick ClickType="Single" DisplayName="Click 'ComboBox Funct' ShipTo" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 302, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='1' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVGhD7dRBCsIwFEXRrLb7yEKyjayikD0IIXNnjr79TSoqVYt9w3vgQdPx5Ydaq83zbMC/LiGsDdXrzYJ/MHZmW1A+LhRO86C2ERQktoYIChIEBSmCghRBQYqgIEVQkCIofNVytJjKeD1rlmO0VNp4dwSFHzyc6S2q/m/aCY2gcECxNC1RZb9GzUrqMb3epo6gcNCIyi9TzLsxOYLCcW2JKn2OyREUpAgKUgQFKYKCFEFBiqAgRVCQegTlH4ypxoWCRG/I7A5qwVu5plpjkwAAAABJRU5ErkJggg==" InformativeScreenshot="17ca83f8fd700621ee96523e5aff0bf6.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'ComboBox Funct' ShipTo" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Ship-to party">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="14">
+                    <x:String>Department resp.</x:String>
+                    <x:String>Sold-to party</x:String>
+                    <x:String>Contact person</x:String>
+                    <x:String>Endcustomer</x:String>
+                    <x:String>Vendor</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Position resp.</x:String>
+                    <x:String>Error Code Resp.</x:String>
+                    <x:String>User responsible</x:String>
+                    <x:String>Person respons.</x:String>
+                    <x:String>Ship-to party</x:String>
+                    <x:String>Installer</x:String>
+                    <x:String>Sold-to original SO</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 302, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='1' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="" InformativeScreenshot="142a1330051a7d856e6269a940291e6b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NClick ClickType="Single" DisplayName="Click 'CTextField Partner'  ShipTo" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 302, 88, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='1' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVGhD7dKxCcAwDAVR77+G1/EUgSyQLpWCEuLKndFVd/BB9UPtaC3GGHFetytc7z3SeoK7+k3w1WyvlWnulU19q+03FhxKcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcLgJnofj5odDfcYRD74lp+0LxgbNAAAAAElFTkSuQmCC" InformativeScreenshot="6a529695d7653be421f1c6201debe79b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into ShipTo" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_17" Text="[in_SoldToParty]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 302, 88, 20" ElementType="InputBox" FriendlyName="'11103616'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='1' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGlSURBVGhD7ZZNbsMgEEY5F5dpV1ylW25R9QKcwuoF2FXyplKkqruupvMRsCHBsRMV6GKeNApmPP55GojVPM80TRPhV6JdJMcKA4l+oYjBQGgLHH+evkR4L0R4Z0R4Z0R4Z0R4Z6rCvXNkjSalDLkws/JoDjjOaaVIaUs+zp3xIadCjmvLJOPjdTmPa8f83v226kYCx69P/DzpIMfi5eP4kntz3hoyadJbMnZ9e8g20YZ3hvRyIoA0Q/aGrfqz7NeNIHT423N74eWcI8NdXuNKOB8X/itUn+VA3QiC8Omlt/DKOdz15+3GcG+uhJXBnRpyal0JObX7HakbQRB+ev8HwiOXHe5Muf96a3evDY7UjeAsfOMr5V6piVqunPObWwrIz4U4ne336NzsMFC735G6EXQTHl44TWL7WN4e8vXy54YOL75icO5yjK+ZYx1+pG4EVeFWYzlmkQl4NAdsWObX82yZpaccyyuScJfvxXGS2bvfVt1Ibna48PeI8M6I8M6I8M6I8M4swj/43zyF0I5FOAYICE9jiXah5u+fMJAObwscExH9AmBag4cjofF0AAAAAElFTkSuQmCC" InformativeScreenshot="7c91a585a7e70271299fbe566151e4c0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts  ShipTo" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NClick ClickType="Single" DisplayName="Click 'ComboBox Funct' EndCustomer" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 323, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='2' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVGhD7dRBCsIwFEXRrLb7yEKyjayikD0IIXNnjr79TSoqVYt9w3vgQdPx5Ydaq83zbMC/LiGsDdXrzYJ/MHZmW1A+LhRO86C2ERQktoYIChIEBSmCghRBQYqgIEVQkCIofNVytJjKeD1rlmO0VNp4dwSFHzyc6S2q/m/aCY2gcECxNC1RZb9GzUrqMb3epo6gcNCIyi9TzLsxOYLCcW2JKn2OyREUpAgKUgQFKYKCFEFBiqAgRVCQegTlH4ypxoWCRG/I7A5qwVu5plpjkwAAAABJRU5ErkJggg==" InformativeScreenshot="b66a7ea2c87efd0f760ebeea7b9429e7.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'ComboBox Funct' EndCustomer" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="Endcustomer">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="14">
+                    <x:String>Department resp.</x:String>
+                    <x:String>Sold-to party</x:String>
+                    <x:String>Contact person</x:String>
+                    <x:String>Endcustomer</x:String>
+                    <x:String>Vendor</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Position resp.</x:String>
+                    <x:String>Error Code Resp.</x:String>
+                    <x:String>User responsible</x:String>
+                    <x:String>Person respons.</x:String>
+                    <x:String>Ship-to party</x:String>
+                    <x:String>Installer</x:String>
+                    <x:String>Sold-to original SO</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 323, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='2' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="" InformativeScreenshot="f609c7a2d75a39818b3f979fd506beef.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NClick ClickType="Single" DisplayName="Click 'CTextField Partner'  EndCustomer" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 323, 88, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='2' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVGhD7dKxCcAwDAVR77+G1/EUgSyQLpWCEuLKndFVd/BB9UPtaC3GGHFetytc7z3SeoK7+k3w1WyvlWnulU19q+03FhxKcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcLgJnofj5odDfcYRD74lp+0LxgbNAAAAAElFTkSuQmCC" InformativeScreenshot="7ae762cb5ed2a3bff8aea53de02d9de2.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into EndCustomer" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_19" Text="[in_SoldToParty]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 323, 88, 20" ElementType="InputBox" FriendlyName="'11103616'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='2' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGlSURBVGhD7ZZNbsMgEEY5F5dpV1ylW25R9QKcwuoF2FXyplKkqruupvMRsCHBsRMV6GKeNApmPP55GojVPM80TRPhV6JdJMcKA4l+oYjBQGgLHH+evkR4L0R4Z0R4Z0R4Z0R4Z6rCvXNkjSalDLkws/JoDjjOaaVIaUs+zp3xIadCjmvLJOPjdTmPa8f83v226kYCx69P/DzpIMfi5eP4kntz3hoyadJbMnZ9e8g20YZ3hvRyIoA0Q/aGrfqz7NeNIHT423N74eWcI8NdXuNKOB8X/itUn+VA3QiC8Omlt/DKOdz15+3GcG+uhJXBnRpyal0JObX7HakbQRB+ev8HwiOXHe5Muf96a3evDY7UjeAsfOMr5V6piVqunPObWwrIz4U4ne336NzsMFC735G6EXQTHl44TWL7WN4e8vXy54YOL75icO5yjK+ZYx1+pG4EVeFWYzlmkQl4NAdsWObX82yZpaccyyuScJfvxXGS2bvfVt1Ibna48PeI8M6I8M6I8M6I8M4swj/43zyF0I5FOAYICE9jiXah5u+fMJAObwscExH9AmBag4cjofF0AAAAAElFTkSuQmCC" InformativeScreenshot="7ae762cb5ed2a3bff8aea53de02d9de2.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Confirm EndCustomer" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_17" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NClick ClickType="Single" DisplayName="Click 'ComboBox Funct' Installer" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 344, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='3' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVGhD7dRBCsIwFEXRrLb7yEKyjayikD0IIXNnjr79TSoqVYt9w3vgQdPx5Ydaq83zbMC/LiGsDdXrzYJ/MHZmW1A+LhRO86C2ERQktoYIChIEBSmCghRBQYqgIEVQkCIofNVytJjKeD1rlmO0VNp4dwSFHzyc6S2q/m/aCY2gcECxNC1RZb9GzUrqMb3epo6gcNCIyi9TzLsxOYLCcW2JKn2OyREUpAgKUgQFKYKCFEFBiqAgRVCQegTlH4ypxoWCRG/I7A5qwVu5plpjkwAAAABJRU5ErkJggg==" InformativeScreenshot="7890a33d8c3393f00e786629ec0a052c.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'ComboBox Funct' Installer" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="Installer">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="14">
+                    <x:String>Department resp.</x:String>
+                    <x:String>Sold-to party</x:String>
+                    <x:String>Contact person</x:String>
+                    <x:String>Endcustomer</x:String>
+                    <x:String>Vendor</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Position resp.</x:String>
+                    <x:String>Error Code Resp.</x:String>
+                    <x:String>User responsible</x:String>
+                    <x:String>Person respons.</x:String>
+                    <x:String>Ship-to party</x:String>
+                    <x:String>Installer</x:String>
+                    <x:String>Sold-to original SO</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 344, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='3' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="" InformativeScreenshot="d46c2e3769527fe6838c9c2ba5c9099d.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NClick ClickType="Single" DisplayName="Click 'CTextField Partner'  Installer" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 344, 88, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='3' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVGhD7dKxCcAwDAVR77+G1/EUgSyQLpWCEuLKndFVd/BB9UPtaC3GGHFetytc7z3SeoK7+k3w1WyvlWnulU19q+03FhxKcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcLgJnofj5odDfcYRD74lp+0LxgbNAAAAAElFTkSuQmCC" InformativeScreenshot="318c691e4c856ee76c2ece0b684736f9.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Installer" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_20" Text="[in_SoldToParty]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="186, 344, 88, 20" ElementType="InputBox" FriendlyName="'11103616'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='3' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGlSURBVGhD7ZZNbsMgEEY5F5dpV1ylW25R9QKcwuoF2FXyplKkqruupvMRsCHBsRMV6GKeNApmPP55GojVPM80TRPhV6JdJMcKA4l+oYjBQGgLHH+evkR4L0R4Z0R4Z0R4Z0R4Z6rCvXNkjSalDLkws/JoDjjOaaVIaUs+zp3xIadCjmvLJOPjdTmPa8f83v226kYCx69P/DzpIMfi5eP4kntz3hoyadJbMnZ9e8g20YZ3hvRyIoA0Q/aGrfqz7NeNIHT423N74eWcI8NdXuNKOB8X/itUn+VA3QiC8Omlt/DKOdz15+3GcG+uhJXBnRpyal0JObX7HakbQRB+ev8HwiOXHe5Muf96a3evDY7UjeAsfOMr5V6piVqunPObWwrIz4U4ne336NzsMFC735G6EXQTHl44TWL7WN4e8vXy54YOL75icO5yjK+ZYx1+pG4EVeFWYzlmkQl4NAdsWObX82yZpaccyyuScJfvxXGS2bvfVt1Ibna48PeI8M6I8M6I8M6I8M4swj/43zyF0I5FOAYICE9jiXah5u+fMJAObwscExH9AmBag4cjofF0AAAAAElFTkSuQmCC" InformativeScreenshot="318c691e4c856ee76c2ece0b684736f9.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Confirm Installer" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_18" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NClick ClickType="Single" DisplayName="Click 'ComboBox Funct' Object" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 365, 137, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='4' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAYCAYAAAAcTtR3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVGhD7dRBCsIwFEXRrLb7yEKyjayikD0IIXNnjr79TSoqVYt9w3vgQdPx5Ydaq83zbMC/LiGsDdXrzYJ/MHZmW1A+LhRO86C2ERQktoYIChIEBSmCghRBQYqgIEVQkCIofNVytJjKeD1rlmO0VNp4dwSFHzyc6S2q/m/aCY2gcECxNC1RZb9GzUrqMb3epo6gcNCIyi9TzLsxOYLCcW2JKn2OyREUpAgKUgQFKYKCFEFBiqAgRVCQegTlH4ypxoWCRG/I7A5qwVu5plpjkwAAAABJRU5ErkJggg==" InformativeScreenshot="8ea01cdc35d290252d61ad7610818d0f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'ComboBox Funct' Object" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NSelectItem_6" Item="Object">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="14">
+                    <x:String>Department resp.</x:String>
+                    <x:String>Sold-to party</x:String>
+                    <x:String>Contact person</x:String>
+                    <x:String>Endcustomer</x:String>
+                    <x:String>Vendor</x:String>
+                    <x:String>Object</x:String>
+                    <x:String>Position resp.</x:String>
+                    <x:String>Error Code Resp.</x:String>
+                    <x:String>User responsible</x:String>
+                    <x:String>Person respons.</x:String>
+                    <x:String>Ship-to party</x:String>
+                    <x:String>Installer</x:String>
+                    <x:String>Sold-to original SO</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="41, 365, 144, 20" ElementType="DropDown" FriendlyName="'ComboBox Funct'" FullSelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' tableRow='4' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner Function' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="" InformativeScreenshot="60ebdf3ad6502e849016ec4d5b31a109.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NClick ClickType="Single" DisplayName="Click 'CTextField Partner'  Object" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="179, 365, 88, 20" ElementType="InputBox" FriendlyName="'CTextField Partner'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='4' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVGhD7dKxCcAwDAVR77+G1/EUgSyQLpWCEuLKndFVd/BB9UPtaC3GGHFetytc7z3SeoK7+k3w1WyvlWnulU19q+03FhxKcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcDjB4QSHExxOcLgJnofj5odDfcYRD74lp+0LxgbNAAAAAElFTkSuQmCC" InformativeScreenshot="29056daaf22119f2ba35f5c203c4e67e.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Object" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_21" Text="[in_BuildingID]">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="179, 365, 88, 20" ElementType="InputBox" FriendlyName="'11103616'" FullSelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' tableRow='4' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Partner' id='usr/tblSAPLIPARTCTRL_0200' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAYCAYAAAB3JpoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGlSURBVGhD7ZZNbsMgEEY5F5dpV1ylW25R9QKcwuoF2FXyplKkqruupvMRsCHBsRMV6GKeNApmPP55GojVPM80TRPhV6JdJMcKA4l+oYjBQGgLHH+evkR4L0R4Z0R4Z0R4Z0R4Z6rCvXNkjSalDLkws/JoDjjOaaVIaUs+zp3xIadCjmvLJOPjdTmPa8f83v226kYCx69P/DzpIMfi5eP4kntz3hoyadJbMnZ9e8g20YZ3hvRyIoA0Q/aGrfqz7NeNIHT423N74eWcI8NdXuNKOB8X/itUn+VA3QiC8Omlt/DKOdz15+3GcG+uhJXBnRpyal0JObX7HakbQRB+ev8HwiOXHe5Muf96a3evDY7UjeAsfOMr5V6piVqunPObWwrIz4U4ne336NzsMFC735G6EXQTHl44TWL7WN4e8vXy54YOL75icO5yjK+ZYx1+pG4EVeFWYzlmkQl4NAdsWObX82yZpaccyyuScJfvxXGS2bvfVt1Ibna48PeI8M6I8M6I8M6I8M4swj/43zyF0I5FOAYICE9jiXah5u+fMJAObwscExH9AmBag4cjofF0AAAAAElFTkSuQmCC" InformativeScreenshot="29056daaf22119f2ba35f5c203c4e67e.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Confirm Object" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_19" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_23" Shortcuts="[d(hk)][k(f3)][u(hk)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Save Changes" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_24" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)]" />
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back to search" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_25" Shortcuts="[d(hk)][k(f12)][u(hk)]" />
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Back to Mainmenu" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_26" Shortcuts="[d(hk)][k(f12)][u(hk)]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;end of Equipment change Process for Euipment: &quot; + in_SerialNumber]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="b180df3c5f7466638c53cd4b04e3ac3e.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

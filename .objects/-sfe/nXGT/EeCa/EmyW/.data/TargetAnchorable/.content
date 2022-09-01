@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="WfzA6Y_i0UCn7OnJk8zgMQ" DesignTimeRectangle="22, 86, 1892, 31" ElementType="Toolbar" FriendlyName="'Change Equipment:'" FullSelectorArgument="&lt;sap id='titl' /&gt;" FuzzySelectorArgument="&lt;sap id='titl' /&gt;" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="InformativeScreenshot" originalValue="3ddeb139f12cd8d3a78a9face3ef8bc8.png" xmlns="">0nfunOc5eYEe_USYRjZLJOA</imageRef>
+</TargetAnchorable>

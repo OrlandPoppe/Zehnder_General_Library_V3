@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" ContentHash="15gqL5vPcECQf-KO61Ipfg" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" Reference="lTMLQeuSGEut97auj2ZPLw/7eJn2TzjPUW53B7VkNlTbw" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*reate *' /&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">06ecUH_11mE-gvUOVdX0wgg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="f82dcd077fed2028d72a532506d1d256.png" xmlns="">0XDqDUK0NHUepXLjuhyZJTg</imageRef>
+</TargetApp>

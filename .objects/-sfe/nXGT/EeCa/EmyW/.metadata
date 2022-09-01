@@ -1,0 +1,14 @@
+﻿{
+  "Id": "EmyW1rcKd0mGuAyYRAIIaw",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/EmyW1rcKd0mGuAyYRAIIaw",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/EeCaCAGo9EyoWs_kYiRgWg",
+  "Name": "ScreenTitle",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-05-18T13:44:58.6245853Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.4.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T13:44:58.6245853Z"
+}

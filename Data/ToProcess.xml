@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<order>
+  <package>premium</package>
+  <anrede>Herr</anrede>
+  <vorname>Orland Kontakt-</vorname>
+  <nachname>Poppe Kontakt-</nachname>
+  <strasse>Grenslaan Kontakt-</strasse>
+  <hausnummer>26</hausnummer>
+  <plz>80171</plz>
+  <ort>Zwolle Kontakt-</ort>
+  <email>orland.poppe@gmail.com</email>
+  <tel>0683212063</tel>
+  <seriennummer>9876543210</seriennummer>
+  <rented>ja</rented>
+  <rented_accept>on</rented_accept>
+  <address_differ>ja</address_differ>
+  <operation_vorname>Orland Einsatz</operation_vorname>
+  <operation_nachname>Poppe Einsatz</operation_nachname>
+  <operation_strasse>Grenslaan Einsatz</operation_strasse>
+  <operation_hausnummer>26</operation_hausnummer>
+  <operation_plz>80172</operation_plz>
+  <operation_ort>Zwolle</operation_ort>
+  <fhw>ja</fhw>
+  <fhw_firma>Poppe BV</fhw_firma>
+  <fhw_strasse>Mainroad</fhw_strasse>
+  <fhw_hausnummer>12</fhw_hausnummer>
+  <fhw_plz>59994</fhw_plz>
+  <fhw_ort>praag</fhw_ort>
+  <message>Notiz Orland Poppe</message>
+  <acceptance_agb>on</acceptance_agb>
+  <acceptance_privacy>on</acceptance_privacy>
+  <newsletter/>
+</order>

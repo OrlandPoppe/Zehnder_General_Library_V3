@@ -1,0 +1,1076 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_CreateEndUser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:z="clr-namespace:Zehnder_DataService;assembly=DataService.Zehnder_DataService">
+  <x:Members>
+    <x:Property Name="in_OPCOName" Type="InArgument(x:String)" />
+    <x:Property Name="in_DebugMode" Type="InArgument(x:Boolean)" />
+    <x:Property Name="out_EndUserNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="in_EndUserData" Type="InArgument(z:EndUser)" />
+    <x:Property Name="in_OPCOSettings" Type="InArgument(sd:DataRow)" />
+  </x:Members>
+  <this:SAP_CreateEndUser.in_OPCOName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_CreateEndUser.in_OPCOName>
+  <this:SAP_CreateEndUser.in_DebugMode>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:SAP_CreateEndUser.in_DebugMode>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1089,8848</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_CreateEndUser_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="72">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Zehnder_DataService</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>DataService.Zehnder_DataService</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_CreateEndUser" sap:VirtualizedContainerService.HintSize="939,8743" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="StreetName" />
+      <Variable x:TypeArguments="x:String" Name="TelephoneNumber" />
+      <Variable x:TypeArguments="x:String" Name="City" />
+      <Variable x:TypeArguments="x:String" Name="ZIPCode" />
+      <Variable x:TypeArguments="x:String" Name="HouseNumber" />
+      <Variable x:TypeArguments="x:String" Name="Name" />
+      <Variable x:TypeArguments="x:String" Name="HouseNumberAddition" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="897,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Creating new EndUser in SAP&quot;]" />
+    <If Condition="[IsNothing(in_EndUserData)]" sap:VirtualizedContainerService.HintSize="897,726" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,407" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,315" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">Test RPA2</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[ZIPCode]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">5867 CN</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">Swolgen</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[HouseNumber]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">5</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[StreetName]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">Hoekweg</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[in_OPCOName]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">NL</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[TelephoneNumber]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">0612345678</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[in_DebugMode]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,568" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch DisplayName="Try Catch - Assign EndUserData" sap:VirtualizedContainerService.HintSize="434,476" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+            <TryCatch.Try>
+              <ui:MultipleAssign DisplayName="Multiple Assign - EndUserData" sap:VirtualizedContainerService.HintSize="334,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.Name]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[ZIPCode]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.ZIPCode]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.City]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[HouseNumber]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.HouseNumber]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[StreetName]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.StreetName]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[TelephoneNumber]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.PhoneNumber]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[HouseNumberAddition]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_EndUserData.HouseNumberAddition]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,314" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Unable to assign all necessary values from the EndUserData entity!&quot;]" />
+                    <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToTransaction workflow" sap:VirtualizedContainerService.HintSize="897,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToTransaction.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionCode">VD01</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox Customer'" sap:VirtualizedContainerService.HintSize="897,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Endcustomer/Installer/Planner">
+      <ucas:SelectMenuItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="64">
+          <x:String>(Select)</x:String>
+          <x:String>Assortment (obsolete,don't use</x:String>
+          <x:String>Bill-to party</x:String>
+          <x:String>Bill-to party</x:String>
+          <x:String>Branch w/o intercomp.billing</x:String>
+          <x:String>Branch with external billing</x:String>
+          <x:String>Branch with intercomp.billing</x:String>
+          <x:String>Competitor</x:String>
+          <x:String>Construction site</x:String>
+          <x:String>Consumer</x:String>
+          <x:String>Customer (ext.number assgnmnt)</x:String>
+          <x:String>Customer (general)</x:String>
+          <x:String>Customer (Portal Role), Maxim.</x:String>
+          <x:String>Customer(Portal Role), Minimal</x:String>
+          <x:String>Distribution center</x:String>
+          <x:String>Endcustomer/Installer/Planner</x:String>
+          <x:String>Franchisee</x:String>
+          <x:String>Goods recipient</x:String>
+          <x:String>Goods recipient</x:String>
+          <x:String>Goods recipient</x:String>
+          <x:String>Group Companies</x:String>
+          <x:String>Hierarchy Node</x:String>
+          <x:String>Hierarchy Node</x:String>
+          <x:String>IC customer "cash pooling"</x:String>
+          <x:String>IC customer "current accounts"</x:String>
+          <x:String>IC customer "loans"</x:String>
+          <x:String>Named List Of Accounts</x:String>
+          <x:String>Object</x:String>
+          <x:String>One-time cust.(ext.no.assgnmt)</x:String>
+          <x:String>One-time cust.(ext.no.assgnmt)</x:String>
+          <x:String>One-time cust.(int.no.assgnmt)</x:String>
+          <x:String>One-time cust.(int.no.assgnmt)</x:String>
+          <x:String>Payer</x:String>
+          <x:String>Payer</x:String>
+          <x:String>PBU-ZGI-PBU customers</x:String>
+          <x:String>PROMOTION</x:String>
+          <x:String>Prospective customer</x:String>
+          <x:String>Prospective customer</x:String>
+          <x:String>Sales partners</x:String>
+          <x:String>Sales partners</x:String>
+          <x:String>Sold-to party</x:String>
+          <x:String>Sold-to party</x:String>
+          <x:String>TR-LO customer</x:String>
+          <x:String>Turkey Year End Closing</x:String>
+          <x:String>Wholesale customer</x:String>
+          <x:String xml:space="preserve"> </x:String>
+        </scg:List>
+      </ucas:SelectMenuItem.Items>
+      <ucas:SelectMenuItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a3e31292-55c3-46de-953a-98706c08fda4" InformativeScreenshot="e68133078bcc89485ec4a9822d562176" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Customer Create: Initial Screen' idx='*' /&gt;&lt;sap id='usr/cmbRF02D-KTOKD' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ucas:SelectMenuItem.Target>
+    </ucas:SelectMenuItem>
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="897,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0775fa8b-712e-4e20-8595-b95ce89b4b19" InformativeScreenshot="0f78295bb1b4390e19230294e8ef364c" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Customer Create: Initial Screen' /&gt;&lt;sap id='usr/cmbRF02D-KTOKD' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="897,7209" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,6920" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="SearchTerm" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="StatusbarText" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Enter data for &quot;Address&quot; tab" sap:VirtualizedContainerService.HintSize="480,1721" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="mobile_FSM" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Customer Name" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[Name]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="712b7cab-828a-4210-922f-32de32d24414" InformativeScreenshot="3d5831215ea69da360e401de05a75009" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-NAME1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <Assign DisplayName="Assign SearchTerm" sap:VirtualizedContainerService.HintSize="359,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[SearchTerm]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[ZIPCode.Replace(" ", "") + " " + HouseNumber + HouseNumberAddition]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Search Term" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" Text="[SearchTerm]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8854320a-c87b-4c04-9be6-5959e93eebaf" InformativeScreenshot="1576466e3837024101f2c669f7ea6dfc" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-SORT1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Street" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_26" Text="[StreetName]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b946a6bc-142e-4fba-80f6-c2d8bd006511" InformativeScreenshot="b3f21fcdde9907a79cf471523a454319" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-STREET' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter House Number" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_27" Text="[HouseNumber + HouseNumberAddition]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e49210b-1741-4461-b821-ae4e4ba84988" InformativeScreenshot="e2153444af5fdbd4bce11612d7c5351c" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Postal Code" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_28" Text="[ZIPCode]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2f89c324-6ef7-404a-b9e8-e67b3fba21fe" InformativeScreenshot="7b970031dd832879e59e888c8fe376cb" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-POST_CODE1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter City" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_29" Text="[City]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="666bff23-eebc-468d-9509-ce43a513c227" InformativeScreenshot="84a7d20b720230f65f853eaa3df43a8a" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-CITY1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Country" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_30" Text="[in_OPCOName]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20954646-a651-4e83-9da0-1498156d19f6" InformativeScreenshot="81bfcd06f09505ee8ac01ea2660d405d" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/ctxtADDR1_DATA-COUNTRY' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Dutch as Language" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="Dutch">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="64">
+                    <x:String>Afrikaans</x:String>
+                    <x:String>Arabic</x:String>
+                    <x:String>Bulgarian</x:String>
+                    <x:String>Catalan</x:String>
+                    <x:String>Chinese</x:String>
+                    <x:String>Chinese trad.</x:String>
+                    <x:String>Croatian</x:String>
+                    <x:String>Customer reserve</x:String>
+                    <x:String>Czech</x:String>
+                    <x:String>Danish</x:String>
+                    <x:String>Dutch</x:String>
+                    <x:String>English</x:String>
+                    <x:String>Estonian</x:String>
+                    <x:String>Finnish</x:String>
+                    <x:String>French</x:String>
+                    <x:String>German</x:String>
+                    <x:String>Greek</x:String>
+                    <x:String>Hebrew</x:String>
+                    <x:String>Hungarian</x:String>
+                    <x:String>Icelandic</x:String>
+                    <x:String>Indonesian</x:String>
+                    <x:String>Italian</x:String>
+                    <x:String>Japanese</x:String>
+                    <x:String>Korean</x:String>
+                    <x:String>Latvian</x:String>
+                    <x:String>Lithuanian</x:String>
+                    <x:String>Malaysian</x:String>
+                    <x:String>Norwegian</x:String>
+                    <x:String>Polish</x:String>
+                    <x:String>Portuguese</x:String>
+                    <x:String>Romanian</x:String>
+                    <x:String>Russian</x:String>
+                    <x:String>Serbian</x:String>
+                    <x:String>Serbian (Latin)</x:String>
+                    <x:String>Slovakian</x:String>
+                    <x:String>Slovenian</x:String>
+                    <x:String>Spanish</x:String>
+                    <x:String>Swedish</x:String>
+                    <x:String>Thai</x:String>
+                    <x:String>Turkish</x:String>
+                    <x:String>Ukrainian</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bf3b9086-12f9-41b3-94b7-bff962c99f20" InformativeScreenshot="8611747cfd7d0c8a151444ddfbb815bb" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/cmbADDR1_DATA-LANGU' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter Telephone Number" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" Text="[TelephoneNumber]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49c311d8-6d25-41a1-94b0-5a74fb95a7a8" InformativeScreenshot="568b4112d5a811fe318b2eb6d41613d0" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB01/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7111/subADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtSZA1_D0100-TEL_NUMBER' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+            </Sequence>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'TabStrip  TABSTRIP100'" sap:VirtualizedContainerService.HintSize="480,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_6" Item="Control Data">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="8">
+                  <x:String>Address</x:String>
+                  <x:String>Control Data</x:String>
+                  <x:String>Marketing</x:String>
+                  <x:String>Unloading Points</x:String>
+                  <x:String>Export Data</x:String>
+                  <x:String>Contact Person</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44fcc9bb-74e7-460c-a53b-c55eedaf68fc" InformativeScreenshot="3155c458b2a62dece7920d9e03a6c206" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <TryCatch DisplayName="Try Catch - Enter Industry Field" sap:VirtualizedContainerService.HintSize="480,361" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch.Try>
+                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter 'Industry' field" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_32" Text="ECUS">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9ce461d1-f9e8-4ae2-9ce6-c2df985734be" InformativeScreenshot="196588380b1073e01168bc3ca0230cb9" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB02/ssubSUBSC:SAPLATAB:0200/subAREA2:SAPMF02D:7123/ctxtKNA1-BRSCH' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Throw DisplayName="Throw - SAP does not accept data" Exception="[New BusinessRuleException(&quot;[VD01] - SAP did not accept the Endcustomer data as provided within the ticket. Please check manually.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Unloading Points'" sap:VirtualizedContainerService.HintSize="480,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_7" Item="Unloading Points">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="8">
+                  <x:String>Address</x:String>
+                  <x:String>Control Data</x:String>
+                  <x:String>Marketing</x:String>
+                  <x:String>Unloading Points</x:String>
+                  <x:String>Export Data</x:String>
+                  <x:String>Contact Person</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2590b8a2-73e1-4b77-86b9-5a850a3367ac" InformativeScreenshot="3155c458b2a62dece7920d9e03a6c206" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Enter 'Unloading Point'" sap:VirtualizedContainerService.HintSize="480,134" sap2010:WorkflowViewState.IdRef="TypeInto_33" Text="Z01">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6aa97303-d0db-4c47-9648-c1bb8644b4a9" InformativeScreenshot="db68fadb9e28cc09117fb2086132c7ea" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB05/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7340/tblSAPMF02DTCTRL_ABLADESTELLEN' tableCol='0' tableRow='0' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" AlterIfDisabled="True" DisplayName="Check 'CheckBox  Default'" sap:VirtualizedContainerService.HintSize="480,106" sap2010:WorkflowViewState.IdRef="Check_2">
+              <ui:Check.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c1535c40-c08e-4310-abf5-4cc0a407862b" InformativeScreenshot="21fa8aabd8e5cd185672df5ff47bc135" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB05/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7340/tblSAPMF02DTCTRL_ABLADESTELLEN' tableCol='1' tableRow='0' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Check.Target>
+            </ui:Check>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Calendar key'" sap:VirtualizedContainerService.HintSize="480,134" sap2010:WorkflowViewState.IdRef="TypeInto_34" Text="[in_OPCOName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="847425d8-dc3c-4702-a382-52e5c1aafe7a" InformativeScreenshot="27c7a7d1443ffccc0bae82f92e72fcd3" Selector="&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB05/ssubSUBSC:SAPLATAB:0201/subAREA1:SAPMF02D:7340/tblSAPMF02DTCTRL_ABLADESTELLEN' tableCol='2' tableRow='0' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="480,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="f3" KeyModifiers="Ctrl" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="554acfac-956d-476c-93ab-210e69195799">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Shipping'" sap:VirtualizedContainerService.HintSize="480,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_8" Item="Shipping">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>Sales</x:String>
+                  <x:String>Shipping</x:String>
+                  <x:String>Billing Documents</x:String>
+                  <x:String>Partner Functions</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d45e3a1a-4f9c-45aa-b464-9b5794e1f461" InformativeScreenshot="7649a47634ba5d8053f98d8e1d608086" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Delivery Priority'" sap:VirtualizedContainerService.HintSize="480,134" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="[in_OPCOSettings(&quot;DelPrio&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9c39d08a-a173-4ab2-b235-6b437a5df5b2" InformativeScreenshot="d2f6c162fb11b03a25cc859f2842312a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB02/ssubSUBSC:SAPLATAB:0200/subAREA1:SAPMF02D:7315/ctxtKNVV-LPRIO' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'CTextField Shipping'" sap:VirtualizedContainerService.HintSize="480,134" sap2010:WorkflowViewState.IdRef="TypeInto_36" Text="[in_OPCOSettings(&quot;ShipCond&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8975ce9-8f2c-4be0-ae48-3878952b44bc" InformativeScreenshot="25fbbac2dda542e63a6accc4fa9bd603" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB02/ssubSUBSC:SAPLATAB:0200/subAREA1:SAPMF02D:7315/ctxtKNVV-VSBED' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <Sequence DisplayName="Enter data into 'Billing Documents' Tab" sap:VirtualizedContainerService.HintSize="480,1971" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'Billing Documents'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_9" Item="Billing Documents">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                    <x:String>Sales</x:String>
+                    <x:String>Shipping</x:String>
+                    <x:String>Billing Documents</x:String>
+                    <x:String>Partner Functions</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d45e3a1a-4f9c-45aa-b464-9b5794e1f461" InformativeScreenshot="7649a47634ba5d8053f98d8e1d608086" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+              </ucas:SelectMenuItem>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Incoterms' (First field)" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_37" Text="[in_OPCOSettings(&quot;IncoTerms&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="57ed94c5-1739-49e8-83c1-d7f9dfba04f0" InformativeScreenshot="206a863e57889a7227395d3ab4e3429d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA2:SAPMF02D:7321/ctxtKNVV-INCO1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Incoterms' (Second field)" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_38" Text=".">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e1ee6e4f-f374-433c-8e98-443717563de9" InformativeScreenshot="72b3f8ba2e68a175298aae5e2be788d8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA2:SAPMF02D:7321/txtKNVV-INCO2' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Comment sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// TO DO: in Terms of payment stond in de oude versie Z108. In het OPCOSettings bestand staat Z104. Klopt dit? Is het een andere waarde bij CreateNewEndUser?" />
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Terms of Payment'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_39" Text="[in_OPCOSettings(&quot;TermsOfPayment&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea672392-1ff3-47c6-b538-8997f2f50777" InformativeScreenshot="e8f1f31f29356acf8a23b47b6e921461" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA2:SAPMF02D:7321/ctxtKNVV-ZTERM' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'Account assgmt Group'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_40" Text="[in_OPCOSettings(&quot;AcctAssGroup&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="927a2614-3e29-4506-8a0c-38f254125013" InformativeScreenshot="9cea064c788ffa36051cff250cf97cf3" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA3:SAPMF02D:7322/ctxtKNVV-KTGRD' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'BE Tax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_41" Text="1">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d1b4888-60bd-44b1-a6df-ba53a32e0de5" InformativeScreenshot="c6964d4f58bebccec55738de884ad55f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA4:SAPMF02D:7323/subSUB_STEUER:SAPMF02D:7350/tblSAPMF02DTCTRL_STEUERN' tableCol='4' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'DE Tax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_42" Text="1">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="242a7e09-486d-4091-a00b-1ea84530ec66" InformativeScreenshot="ab03838b14791bd8c9df4eb4c3eae226" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA4:SAPMF02D:7323/subSUB_STEUER:SAPMF02D:7350/tblSAPMF02DTCTRL_STEUERN' tableCol='4' tableRow='1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'FR Tax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_43" Text="1">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70c4788b-fab7-4116-9665-2387b846f087" InformativeScreenshot="81e83df92b6947befae19c496b7c2281" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA4:SAPMF02D:7323/subSUB_STEUER:SAPMF02D:7350/tblSAPMF02DTCTRL_STEUERN' tableCol='4' tableRow='2' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'NL Tax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_44" Text="1">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1a7f8a2-f92c-46b7-97eb-086ee7fbda86" InformativeScreenshot="39df20117b33695c19b70c7f124f2fa0" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA4:SAPMF02D:7323/subSUB_STEUER:SAPMF02D:7350/tblSAPMF02DTCTRL_STEUERN' tableCol='4' tableRow='3' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'SE Tax'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_45" Text="1">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f49479a-24c4-4db4-9041-7a4271fc2a19" InformativeScreenshot="deb6086a75591288443d320ae6c45db5" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Customer: Sales Area Data' /&gt;&lt;sap id='usr/subSUBTAB:SAPLATAB:0100/tabsTABSTRIP100/tabpTAB03/ssubSUBSC:SAPLATAB:0200/subAREA4:SAPMF02D:7323/subSUB_STEUER:SAPMF02D:7350/tblSAPMF02DTCTRL_STEUERN' tableCol='4' tableRow='4' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+            </Sequence>
+            <Sequence DisplayName="Save new EndCustomer" sap:VirtualizedContainerService.HintSize="480,967" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="438,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="s" KeyModifiers="Ctrl">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="47601fa1-faea-4bd8-97b2-f3aab6e4a6c7">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <TryCatch DisplayName="Try Catch - Get EndUserNumber" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                <TryCatch.Try>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Statusbar Customer'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be62359f-03a9-4ec6-a0ba-f6be22e50da0" InformativeScreenshot="34adebad86b71b4a189cc47d485a0dab" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Customer Create: Initial Screen' /&gt;&lt;sap id='sbar' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="ui:GenericValue">[StatusbarText]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Popup_Standard'" sap:VirtualizedContainerService.HintSize="680,614" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="5">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,388" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - Ignore popup" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Statusbar Customer'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be62359f-03a9-4ec6-a0ba-f6be22e50da0" InformativeScreenshot="34adebad86b71b4a189cc47d485a0dab" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Customer Create: Initial Screen' /&gt;&lt;sap id='sbar' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[StatusbarText]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable CheckVisibility="True" ContentHash="mdquveV4ckqTtS8xqZQM8A" DesignTimeRectangle="0, 24, 334, 146" ElementType="Container" FriendlyName="'Popup_Standard'" FullSelectorArgument="&lt;sap id='usr' /&gt;" FuzzySelectorArgument="&lt;sap id='usr' /&gt;" ImageBase64="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" InformativeScreenshot="434083c300fc1ee27bc340a16a546621.png" Reference="lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Extract Customer Number from Statusbar Text" sap:VirtualizedContainerService.HintSize="438,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_EndUserNumber]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Regex.Match(StatusbarText, "Customer ([0-9]+)").Groups(1).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;[SAP_VD01_CreateNewEndUser] - New End User succesfully created with Customer Number: &quot; + out_EndUserNumber]" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToHomeScreen workflow" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToHomeScreen.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="480,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="800,1524" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[Not(in_DebugMode)]" DisplayName="If not Debug Mode" sap:VirtualizedContainerService.HintSize="758,1432" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="722,1246" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="680,116" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="s" KeyModifiers="Ctrl">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="47601fa1-faea-4bd8-97b2-f3aab6e4a6c7">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                        <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Popup_Standard'" sap:VirtualizedContainerService.HintSize="680,468" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="5">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - Ignore popup" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable CheckVisibility="True" ContentHash="mdquveV4ckqTtS8xqZQM8A" DesignTimeRectangle="0, 24, 334, 146" ElementType="Container" FriendlyName="'Popup_Standard'" FullSelectorArgument="&lt;sap id='usr' /&gt;" FuzzySelectorArgument="&lt;sap id='usr' /&gt;" ImageBase64="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" InformativeScreenshot="434083c300fc1ee27bc340a16a546621.png" Reference="lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                          </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Statusbar Customer'" sap:VirtualizedContainerService.HintSize="680,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be62359f-03a9-4ec6-a0ba-f6be22e50da0" InformativeScreenshot="34adebad86b71b4a189cc47d485a0dab" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Customer Create: Initial Screen' /&gt;&lt;sap id='sbar' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[StatusbarText]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <Assign DisplayName="Extract Customer Number from Statusbar Text" sap:VirtualizedContainerService.HintSize="680,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_EndUserNumber]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Regex.Match(StatusbarText, "Customer ([0-9]+)").Groups(1).ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[SAP_VD01_CreateNewEndUser] - New End User succesfully created with Customer Number: &quot; + out_EndUserNumber]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NavigateToHomeScreen workflow" sap:VirtualizedContainerService.HintSize="680,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_NavigateToHomeScreen.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="EBjYyLpGFU2_N5Wi6Iumkg" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="5624ec1566004050d72c571f0148bd6a.png" Reference="lTMLQeuSGEut97auj2ZPLw/uamub-2jX0KEnqAUvahuTw" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*reate Customer*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

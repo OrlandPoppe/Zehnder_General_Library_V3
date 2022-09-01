@@ -1,0 +1,318 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_NavigateToHome" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2494,4189" sap2010:WorkflowViewState.IdRef="SAP_NavigateToHome_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_NavigateToHome" sap:VirtualizedContainerService.HintSize="1280,4124" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="AtHomeScreen" />
+      <Variable x:TypeArguments="x:String" Name="ScreenTitle" />
+      <Variable x:TypeArguments="x:Int32" Name="GoBackCounter" />
+      <Variable x:TypeArguments="x:Boolean" Name="StillOnSameScreen" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1238,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Navigating back to SAP Home Screen.&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser 'AnyScreen'" sap:VirtualizedContainerService.HintSize="1238,3901" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1204,3612" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign GoBackCounter" sap:VirtualizedContainerService.HintSize="1162,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[GoBackCounter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Try Catch - Type into Input_Transaction" sap:VirtualizedContainerService.HintSize="1162,1130" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <Sequence sap:VirtualizedContainerService.HintSize="462,903" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Typing /n as transaction should return the robot to SAP home. The code below this functions as a fallback in case this doesn't work." ClickBeforeMode="Single" DisplayName="Type Into 'Input_Transaction'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="420,283" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="/n[k(enter)]">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="Ipjat58lyEiWgdwSp48iBw" DesignTimeRectangle="62, 51, 142, 22" ElementType="InputBox" FriendlyName="'Input_Transaction'" FullSelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJIAAAAaCAYAAABcmAU7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKDSURBVGhD7drPThNRHMXx+y6+hFuWalzpDuPSlU+gC0N8ByW6UEprLaJgLGA1BoQYXbkpFdq0QIrtUGrBONSW/uHnPeO9MylMobis55ucyW172X1C0qSqqJSE7aDR4rgTC7OCeZDC/oDjBp0Pqd5oy2q2IE8mIjL+6DHHnTlYgRnYCSA12xKfeiHLK58lnc5KJpPjuL6DEViZjCc8Oz6k3/rFRCQq6cy6MDZIsAIzsBNAOmxLJBqTNf2v6nhKf87Y8bK5gmcGdjxIjcOOYJOxuOTzW+ZaECGxsGAFZqwf1dQPLPosIfkCIbHBghWYsX5Us6UPerHElOQ3iuZaECGxsGAFZqwfdagf2PTMrGwVS+ZaECENd67rSrValXK5fGKO40itVpN6vW5uB8EKzFg/qtXuCvZ8aloKm9vmWhAhDXeppa9y9eZ9uXJjTC6Pjsml0XvecMb7t++My0G9aW4HwQrMWD+q1dEHvcTLV7Kx9d1cCyKk4W88Mi8XLt46sZHrd8Wp7JtbvcEKzFg/qq0fGCH93z142otp5JpGtBuOCFlI1o/qdI4EIyT2cOIvprMQIQvJ+lGdrj7oERJD8ZlljWjPvOqfD8n4UV39wAiJnScLyfpR3SN90OPXf3ae7Nd/60fpCTbzOinbpR1zLYiQWFiwAjPWjw9pNjkvpXLFXAsiJBYWrMCMD8m8L2/mFqTs7JpXjJ0erMCMzfsZCUq+TekPf3hnxs7K2al6ZpD/eyQ0l3ovOxVCYoPlaCswg3ogLX5ckcy3nOztu/LLbXBc3+3/dGVtPSsfFlc8Oz2QNksVWfr0ReYW3kkyleK4UwcrMIN6IDH2r/mQwsZYWGFWikrJH87Qn1IkFDSTAAAAAElFTkSuQmCC" InformativeScreenshot="bd8afb1b4d35f79b2934aa5380956062.png" Reference="lTMLQeuSGEut97auj2ZPLw/t9uTqsxUhkapJXID3gPPuw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" />
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Button_StartSAPEasyAccess'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="420,486" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="4">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Button_StartSAPEasyAccess'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable ContentHash="ZTefEX6Jx0-CahM064OIBA" DesignTimeRectangle="32, 224, 216, 22" ElementType="Button" FriendlyName="'Button_StartSAPEasyAccess'" FullSelectorArgument="&lt;sap id='usr/btnSTARTBUTTON' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSTARTBUTTON' check:text='Start SAP Easy Access' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANwAAAAaCAYAAADc6zIoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT9SURBVHhe7ZzfbxRVFMfnjyHEd1Me1sQ+8KAP+AeIli6xafwBakhIH0xajbpICLIPGIggKJgUG6PxZfBB3gzRJrQ8YISsRVMSbGq0NFi0QPd4v2fnx70z996ZZdfuNJwmn8zOvefec2bnfGaWF4Ll1XskCMLmIMIJwiaSCPfP0nn65MQUjY29LAhCn4BTcCsn3EfNt+jrC4eovf4r0f1FQRB6BC7BKbiVE27/vtdo9dY5at+/TbTxtyAIPQKX4BTccgpHD34nWvueFhYWSoN4QRAyKJeKhXu4zMEQKXjxaClyiQRBYJcKhWs/uMXBIpwg9AZcKhZu/QbR3e8M4XAuCEJ3wCWvcHcg3NplotVvTOHUuY3w4kV65dV9tGvXc3zEuS2uksyPUS0IKIjZMUYtnjtJzR1PUHM+E1+KkmuduWOwj2U8uy54hkJ9XicXG1Gfssf3DUftjyFwCU45hVtZ/Izady8RrUybwqlzG7Fs9b0v8fH1N960xlWPCRpXzTc+k46F9Z0U8udj1BzaTs25dK48Zdb6ckfM7aGa2qcWZPbCeJDGthrbKRjaQ614XicTu2m4an8MgUtwqm/CQTJ+q6k/HHFui6sczmaEMJk3gmroEI2tjdUax9J91HyzjnHVZJa1ORlKiACRkCNU+ya5QHatby/PHIuq1annQM50fIK/D/3hQDM73ZIrnLUzme832afMuCmwWWcnj21skPRduJGREY7D3y83rvO5La56dN4y9ptS8JbiRo7m+bPekAVrGV9uoO2B/fXmzkrkkco7p8NxUT5DJiUbasRYfSKJR1MbAhp4alewENpeZcaT70mvzVVndow/D46+C3fkyFGavvAFC4cjzm1xlYQbLX0ilpfG11RlhFM4c0dzyZ6Z/XhdKpGrUZlMDmsuRsthNG0MHhBxTv2zBV/tzrVlx3HuqdNa+2Dpq3BzV+f5rTY59Q7/lMQR57Ozs9b4SoOblfxksUtj/gyL5o0GAyWF0zFy53/ugeQpn5XI12AZObNYr4frT/eP5YzfNLzGJbiiuHZLPd5xcy9/nfbaB0mhcH/+dlYFfUv011lDOB3MQaqnDz5LLzT28r/dEIsjzjHO0qm4rcNhvlnjM/HnbdS8os3PDKubOExhEhvNX9mthNtNLWOfzNpCCnLrOfA5qaMAX6zrerSYVmObElrLOzRM495re8TanXUeUG+04ms16vSMDQK4BKecwv1x8wy1V7/iYJ9wEOv55lMMBIuJxzCvJ64cquFqjcPpOd/0tFnC0ViADnwDRw/kY/WGisiuzeHLbdmv03jafIkmZDyxrutpNYaT74CljGOih4K3iYtqj/dI9oxxjXe+S/27Ckc712Or01374IBLcMop3FLrFG1owtnAHOQ6dOlJJ5jXE1cPNEL68yNImiKCmzCa4ybS4vUnva3Jcmu1Ocad2xBBI2k83rsb4fQ8Eby/43rQqEmsmafoQVJYO59HcsU5kvgux211emofFHAJTjmFu339JG3c6QjnY+sLJ3QHBK1GE28l4BKccgq3eO14KeEmP32PpXKBeds6YWviensJfuASnHIKd/Pqh/Rw5UvrYkEQugMuwSmncD/98AGtLU3Tv0unBEHoEbgEp6zCfXx8ks6cOEjXLr9LP//4viAIPQKX4BTcygm3vvw5nTv9tvU/QhEE4dGAU3ArJ5wgCP8/IpwgbBr36D/uXwyiQdkE2gAAAABJRU5ErkJggg==" InformativeScreenshot="6beb02038401e5576119487fde3d6e03.png" Reference="lTMLQeuSGEut97auj2ZPLw/bxm2yarzqkSsF-YgmaZC4Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;" SearchSteps="Selector" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="ZTefEX6Jx0-CahM064OIBA" DesignTimeRectangle="32, 224, 216, 22" ElementType="Button" FriendlyName="'Start SAP Easy Access'" FullSelectorArgument="&lt;sap id='usr/btnSTARTBUTTON' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSTARTBUTTON' check:text='Start SAP Easy Access' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANwAAAAaCAYAAADc6zIoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT9SURBVHhe7ZzfbxRVFMfnjyHEd1Me1sQ+8KAP+AeIli6xafwBakhIH0xajbpICLIPGIggKJgUG6PxZfBB3gzRJrQ8YISsRVMSbGq0NFi0QPd4v2fnx70z996ZZdfuNJwmn8zOvefec2bnfGaWF4Ll1XskCMLmIMIJwiaSCPfP0nn65MQUjY29LAhCn4BTcCsn3EfNt+jrC4eovf4r0f1FQRB6BC7BKbiVE27/vtdo9dY5at+/TbTxtyAIPQKX4BTccgpHD34nWvueFhYWSoN4QRAyKJeKhXu4zMEQKXjxaClyiQRBYJcKhWs/uMXBIpwg9AZcKhZu/QbR3e8M4XAuCEJ3wCWvcHcg3NplotVvTOHUuY3w4kV65dV9tGvXc3zEuS2uksyPUS0IKIjZMUYtnjtJzR1PUHM+E1+KkmuduWOwj2U8uy54hkJ9XicXG1Gfssf3DUftjyFwCU45hVtZ/Izady8RrUybwqlzG7Fs9b0v8fH1N960xlWPCRpXzTc+k46F9Z0U8udj1BzaTs25dK48Zdb6ckfM7aGa2qcWZPbCeJDGthrbKRjaQ614XicTu2m4an8MgUtwqm/CQTJ+q6k/HHFui6sczmaEMJk3gmroEI2tjdUax9J91HyzjnHVZJa1ORlKiACRkCNU+ya5QHatby/PHIuq1annQM50fIK/D/3hQDM73ZIrnLUzme832afMuCmwWWcnj21skPRduJGREY7D3y83rvO5La56dN4y9ptS8JbiRo7m+bPekAVrGV9uoO2B/fXmzkrkkco7p8NxUT5DJiUbasRYfSKJR1MbAhp4alewENpeZcaT70mvzVVndow/D46+C3fkyFGavvAFC4cjzm1xlYQbLX0ilpfG11RlhFM4c0dzyZ6Z/XhdKpGrUZlMDmsuRsthNG0MHhBxTv2zBV/tzrVlx3HuqdNa+2Dpq3BzV+f5rTY59Q7/lMQR57Ozs9b4SoOblfxksUtj/gyL5o0GAyWF0zFy53/ugeQpn5XI12AZObNYr4frT/eP5YzfNLzGJbiiuHZLPd5xcy9/nfbaB0mhcH/+dlYFfUv011lDOB3MQaqnDz5LLzT28r/dEIsjzjHO0qm4rcNhvlnjM/HnbdS8os3PDKubOExhEhvNX9mthNtNLWOfzNpCCnLrOfA5qaMAX6zrerSYVmObElrLOzRM495re8TanXUeUG+04ms16vSMDQK4BKecwv1x8wy1V7/iYJ9wEOv55lMMBIuJxzCvJ64cquFqjcPpOd/0tFnC0ViADnwDRw/kY/WGisiuzeHLbdmv03jafIkmZDyxrutpNYaT74CljGOih4K3iYtqj/dI9oxxjXe+S/27Ckc712Or01374IBLcMop3FLrFG1owtnAHOQ6dOlJJ5jXE1cPNEL68yNImiKCmzCa4ybS4vUnva3Jcmu1Ocad2xBBI2k83rsb4fQ8Eby/43rQqEmsmafoQVJYO59HcsU5kvgux211emofFHAJTjmFu339JG3c6QjnY+sLJ3QHBK1GE28l4BKccgq3eO14KeEmP32PpXKBeds6YWviensJfuASnHIKd/Pqh/Rw5UvrYkEQugMuwSmncD/98AGtLU3Tv0unBEHoEbgEp6zCfXx8ks6cOEjXLr9LP//4viAIPQKX4BTcygm3vvw5nTv9tvU/QhEE4dGAU3ArJ5wgCP8/IpwgbBr36D/uXwyiQdkE2gAAAABJRU5ErkJggg==" InformativeScreenshot="6beb02038401e5576119487fde3d6e03.png" Reference="lTMLQeuSGEut97auj2ZPLw/bxm2yarzqkSsF-YgmaZC4Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;" SearchSteps="Selector" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="466,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Unable to navigate to Home using Transaction Input field. Using fallback method.&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NGetText DisplayName="Get Text 'ScreenTitle'" sap:VirtualizedContainerService.HintSize="1162,166" sap2010:WorkflowViewState.IdRef="NGetText_2">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="WfzA6Y_i0UCn7OnJk8zgMQ" DesignTimeRectangle="22, 86, 1892, 31" ElementType="Toolbar" FriendlyName="'ScreenTitle'" FullSelectorArgument="&lt;sap id='titl' /&gt;" FuzzySelectorArgument="&lt;sap id='titl' /&gt;" InformativeScreenshot="3ddeb139f12cd8d3a78a9face3ef8bc8.png" Reference="lTMLQeuSGEut97auj2ZPLw/EmyW1rcKd0mGuAyYRAIIaw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[ScreenTitle]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <ui:InterruptibleWhile Condition="[Not(ScreenTitle.Trim.ToUpper.Contains(&quot;SAP EASY ACCESS&quot;))]" DisplayName="While Not at Home Screen" sap:VirtualizedContainerService.HintSize="1162,2041" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1126,1876" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign GoBackCounter" sap:VirtualizedContainerService.HintSize="1084,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[GoBackCounter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[GoBackCounter + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[GoBackCounter &gt; 20]" DisplayName="If GoBackCounter &gt; 20, throw error" sap:VirtualizedContainerService.HintSize="1084,1684" sap2010:WorkflowViewState.IdRef="If_11">
+                    <If.Then>
+                      <Throw Exception="[New SystemException(&quot;Robot was unable to get back to SAP Home Screen.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Go back and click through popups" sap:VirtualizedContainerService.HintSize="839,1527" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="ScreenTitle2" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[StillOnSameScreen]" DisplayName="If StillOnSameScreen" sap:VirtualizedContainerService.HintSize="797,397" sap2010:WorkflowViewState.IdRef="If_13">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(f12)][u(hk)]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(shift)][k(f3)][u(shift)][u(hk)]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_ClickThroughPopups workflow" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP_Library\SAP_ClickThroughPopups.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_TimeoutInSeconds">2</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NGetText DisplayName="Get Text 'ScreenTitle'" sap:VirtualizedContainerService.HintSize="797,166" sap2010:WorkflowViewState.IdRef="NGetText_3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable ContentHash="WfzA6Y_i0UCn7OnJk8zgMQ" DesignTimeRectangle="22, 86, 1892, 31" ElementType="Toolbar" FriendlyName="'ScreenTitle'" FullSelectorArgument="&lt;sap id='titl' /&gt;" FuzzySelectorArgument="&lt;sap id='titl' /&gt;" InformativeScreenshot="3ddeb139f12cd8d3a78a9face3ef8bc8.png" Reference="lTMLQeuSGEut97auj2ZPLw/EmyW1rcKd0mGuAyYRAIIaw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Change Equipment: Partners' /&gt;" SearchSteps="Selector" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.Text>
+                            <OutArgument x:TypeArguments="x:String">[ScreenTitle2]</OutArgument>
+                          </uix:NGetText.Text>
+                        </uix:NGetText>
+                        <If Condition="[ScreenTitle2 = ScreenTitle]" DisplayName="If screen title isn't changing" sap:VirtualizedContainerService.HintSize="797,309" sap2010:WorkflowViewState.IdRef="If_12">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign StillOnSameScreen" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[StillOnSameScreen]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign StillOnSameScreen" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[StillOnSameScreen]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <Assign DisplayName="Assign ScreenTitle" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[ScreenTitle]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[ScreenTitle2]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Set ScreenTitle2 Empty again" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[ScreenTitle2]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[ScreenTitle]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="QqLE8NyKCUqHVNOol0J8mA" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="ee3e844c1334848f4f486219fb519064.png" Reference="lTMLQeuSGEut97auj2ZPLw/EeCaCAGo9EyoWs_kYiRgWg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

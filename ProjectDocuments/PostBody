@@ -1,0 +1,61 @@
+{
+	"ticket": {
+		"comment": {
+			"body": "This ticket is populated by the Robot  var_TicketBody",
+			"public": true
+		},
+		"custom_fields": [
+			{
+				"id": 360031283897,
+				"value": "xml_Firstname"
+			},
+			{
+				"id": 1900005683313,
+				"value": "xml_Lastname"
+			},
+			{
+				"id": 360031186598,
+				"value": "xml_Street"
+			},
+			{
+				"id": 1900005683333,
+				"value": "xml_ZipCode"
+			},
+			{
+				"id": 360031283917,
+				"value": "xml_Email"
+			},
+			{
+				"id": 360011536717,
+				"value": "xml_Phone"
+			},
+			{
+				"id": 360005893718,
+				"value": "xml_SerialNumber"
+			},
+			{
+				"id": 360004953272,
+				"value": "xml_Installer"
+			},
+			{
+				"id": 360031283857,
+				"value": "xml_InstallerName"
+			},
+			{
+				"id": 360031186538,
+				"value": "xml_InstallerStreet"
+			},
+			{
+				"id": 360031186558,
+				"value": "xml_InstallerZipCode"
+			},
+			{
+				"id": 360031186578,
+				"value": "xml_InstallerCity"
+			}
+		],
+		"status": "open"
+	}
+}
+ 
+ 

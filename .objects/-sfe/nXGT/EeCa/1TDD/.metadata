@@ -1,0 +1,14 @@
+﻿{
+  "Id": "1TDDUmSMtU6Qy3e_EU76GQ",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/EeCaCAGo9EyoWs_kYiRgWg",
+  "Name": "Popup_Standard",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-05-18T13:28:49.0888159Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.4.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T13:28:49.0888159Z"
+}

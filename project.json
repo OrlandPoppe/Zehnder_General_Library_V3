@@ -1,0 +1,62 @@
+{
+  "name": "Zehnder_General_Library_V3",
+  "description": "Zehnder Library",
+  "main": "NewActivity.xaml",
+  "dependencies": {
+    "UiPath.DataService.Activities": "21.10.1",
+    "UiPath.Excel.Activities": "2.10.4",
+    "UiPath.Mail.Activities": "1.15.2",
+    "UiPath.SAP.BAPI.Activities": "2.2.5",
+    "UiPath.System.Activities": "21.4.1",
+    "UiPath.UIAutomation.Activities": "21.4.4",
+    "UiPath.WebAPI.Activities": "1.9.2"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "ZehnderGroup",
+      "namespace": "Zehnder_DataService",
+      "uniqueReference": "pOEtVm0adPsCWqKryzI4iWqQR96yNTV0qi6WrinRfTs="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.4.5.0",
+  "projectVersion": "2.0.49",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": [
+        "Data/Test/TestSequence.xaml"
+      ]
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

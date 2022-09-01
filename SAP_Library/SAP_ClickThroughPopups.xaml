@@ -1,0 +1,479 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_ClickThroughPopups" this:SAP_ClickThroughPopups.in_TimeoutInSeconds="2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TimeoutInSeconds" Type="InArgument(x:Double)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2429,3754</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_ClickThroughPopups_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_ClickThroughPopups" sap:VirtualizedContainerService.HintSize="2439,3689" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="PopupExists" />
+      <Variable x:TypeArguments="x:Int32" Name="PopupCounter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2397,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clicking through SAP Popups...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="2397,3375" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2363,3086" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign PopupCounter" sap:VirtualizedContainerService.HintSize="2321,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[PopupCounter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleDoWhile Condition="[PopupExists]" DisplayName="Do While - While popup exists" sap:VirtualizedContainerService.HintSize="2321,2891" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2285,2726" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'SAP_Popup_Standard'" sap:VirtualizedContainerService.HintSize="2243,2634" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="[in_TimeoutInSeconds]">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1885,2368" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="PopupText" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign PopupCounter" sap:VirtualizedContainerService.HintSize="1843,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[PopupCounter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[PopupCounter + 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[PopupCounter &gt; 15]" DisplayName="If stuck in loop, throw an error" sap:VirtualizedContainerService.HintSize="1843,248" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If.Then>
+                            <Throw DisplayName="Throw - Stuck in popup loop" Exception="[New SystemException(&quot;[SAP_ClickThroughPopups] - Robot got stuck while trying to click through popups. Please check if the library activity is properly set up to handle this scenario (see screenshot).&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <Assign DisplayName="Assign PopupExists" sap:VirtualizedContainerService.HintSize="1843,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[PopupExists]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <uix:NGetText DisplayName="Get Text 'Popup_Standard'" sap:VirtualizedContainerService.HintSize="1843,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CheckVisibility="True" ContentHash="mdquveV4ckqTtS8xqZQM8A" DesignTimeRectangle="0, 24, 334, 146" ElementType="Container" FriendlyName="'Popup_Standard'" FullSelectorArgument="&lt;sap id='usr' /&gt;" FuzzySelectorArgument="&lt;sap id='usr' /&gt;" ImageBase64="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" InformativeScreenshot="434083c300fc1ee27bc340a16a546621.png" Reference="lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                          </uix:NGetText.Target>
+                          <uix:NGetText.Text>
+                            <OutArgument x:TypeArguments="x:String">[PopupText]</OutArgument>
+                          </uix:NGetText.Text>
+                        </uix:NGetText>
+                        <If Condition="[PopupText.Trim.ToUpper.Contains(&quot;SAVE&quot;)]" DisplayName="If Popup asks to save" sap:VirtualizedContainerService.HintSize="1843,1579" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ClickType="Single" DisplayName="Click 'Button_No'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable ContentHash="ls_CSj-_Z0-dFIatWx_IoQ" DesignTimeRectangle="129, 97, 83, 22" ElementType="Button" FriendlyName="'Button_No'" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION2' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSPOP-OPTION2' check:text='No' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAaCAYAAADCDsDeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIuSURBVGhD7dlNSxtBAMbx+TDiN8hlLx489Dt40EsIgu2lUHootIK02ovmoCi1KtWCEorSS+ih3kTagy8Hi0rAlgg2pGgMNtao2afzrFmZXXeTrpBOFubwZ3ZmZy6/zCGwolg+h6k1GdwWJv4UFpwHjjOTL5BM9pvuGf1UTzGRfuZMOK4sDcOufgcu86aI0Y1+qqd49HDAmXAsH87DvjwCar9NEaMb/VTPO7i4+glU1kxRk27Nca+LwYdNjZNuTXHtq8Pgw6aG0a05bnUfOPtsihjdGuKeEreyDpQ/6msrCUsIWMNTvrUHyKr72iy60S8Ut5R/B/tsFSgt6muzV0J2wkp0I+tZU+ZtGN3oFwNcCZnphvVqzLvm2SMgnDqR3qyvayxeuKUxpN3b68HlukAqU98vfwSR6EXOPa+pmOHKZ/f2qmt89mA+RaoNbm/8cN3b6wP33lTfTdZUU9zjH3Ny0yfgZE5fGz0SsgtZd57pgtUnc9f8708ey5vbgfSGO9cT3egXivvrYBZ2eTnw8H/rDt5r52aK27WbeSpTfy/xRaIHudv9eqIb/UJxC7lp1NoOV0ZAdc3Z4/5b8O3VFN3oF4p7tDeF2qlm3JhGN/qF4uZ3xg3uPaMb/UJxD7ZHcV36EHjY1Di60S8U99uXEVQKi7goTJsiRjf6eXDfjD93JhxnJ59gZ30Iu19fmiJGN/qpnqJafO9MOM6/HQz88Gb6t+ineppP6y3M4Lasc/wFOXljeeMmZxgAAAAASUVORK5CYII=" InformativeScreenshot="52ac962deecfd33ba6646278c8ac1b7d.png" Reference="lTMLQeuSGEut97auj2ZPLw/djn1kUDvekeTeBaRiI7RVw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Confirmat. Prompt' idx='*' /&gt;" SearchSteps="Selector" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="1422,1420" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="Sometimes, a screen is recognized as a popup that we don't want to have recognized a a popup. In this case, this check is necessary" DisplayName="Check App State 'Button_Yes'" sap:VirtualizedContainerService.HintSize="1380,1326" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="0.5">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Button_Yes'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CheckVisibility="True" ContentHash="w7cfzDuUTESukeWqr8g9ew" DesignTimeRectangle="45, 141, 111, 22" ElementType="Button" FriendlyName="'Yes'" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' check:text='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAaCAYAAACEuGN0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVGhD7dpPTxNBHMbxeTGG8AbwwKUH3gUH8NA0JsKFxHAwERNjkYvsAYKRPw1ogmmIxkvjQW+G6AHiAYJkEzAlwaZGSoMFC3Qf56G07nZnrceZcQ7flJ3OnD79zV4Q5eopXHbkMC2qjXlWeo7FuQmk07ddhkQvusUwZ717eP1yEkF9HzgvujSPTvSiWwxzdOQOqgcrCM4PgcZPl+bRiV50S8TExTeg9sGle9KpO+ZlWX3YpVfSqStmcHGgPuzSKjp1x6zvAifvXJpHp79iHhOztg5U3xjSBDJCILMWXfcneyFupuGH1myLTvRKxKwUlxGcvAcqq+aUH4DoG4Lfet4cQr8YQCG8x8LoRC+7MGWFWwL92enY382m4fUJCDnBQvTA24yea653ntE/azHb08jP8JTKIrjhKY5M9Dg8h6lPfrbnasIy+fD6uHynhq9cPl9PZ+f1bFhWYyrflVdrf67SZq2rNnz9dv4I9K8r5o+vObnpLXCUM6+NQQmXQiGyPiYnsXMtnp+9Iad0EL7iO12jE70SMb/vLSGovlIe1j4lZg6FYb4zp0LPzT1+NgVv43pfPgUxPNbeY0J0olciZsmfR8MyTBxNRa7TNhoBW2v/ML26RSd6JWIefnmKxrGhmP9ZdKJXImZxa8ZhGhKd6JWIuff5CS4ra8rDLr2iE70SMbc/PkattIpfpXmX5tGJXkrMZzP3sTR3F1vrD7Hz6ZFL8+hEL7rFMOvlF1hZeKD8xyGXntGLbjFMl/k5TGs6xW8YCJhPFg1YoQAAAABJRU5ErkJggg==" InformativeScreenshot="a9d31563e8b4062020c27d16e180f0c1.png" Reference="lTMLQeuSGEut97auj2ZPLw/522HQkucFUC3_PRVi0fPvg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="950,1069" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="908,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;A popup was recognized, but it does not have the expected popup layout! Trying a different method.&quot;]" />
+                                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Button_GreenCheckMark'" sap:VirtualizedContainerService.HintSize="908,844" sap2010:WorkflowViewState.IdRef="NCheckState_3" Timeout="0.3">
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="478,618" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="436,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,258" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <uix:NClick ClickType="Single" DisplayName="Click 'Button_GreenCheckMark'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                                                  <uix:NClick.Target>
+                                                    <uix:TargetAnchorable ContentHash="UFujP_W-skqRNCs1TSshTw" DesignTimeRectangle="383, 135, 20, 20" ElementType="Button" FriendlyName="'Button Continue (Enter)'" FullSelectorArgument="&lt;sap tooltip='?ontinue*nter*' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='?ontinue*nter*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGqSURBVEhLvZVPS8JwAIb7IH2LjkHnvkJ0CoSCik4eIqggyk5hYBhZShbYIYoOQYe8hZSH8mBUBBYKNozSUVr+29veH1my7ed0YYcH3dz7PNsu9uTUErrJ/wU+lB1s+efgco39CTroMgXWvDM43PNAKz8AlbQjuKWDLlNgcmIcaiYMrZIF6u+O4JYOuqQBVJ+A4pkz9K19oJazHhu4TFxhyNuP0dUp8V2c17e2Aa2aMcmMUDjgHoQn2idghOe5tQ+U74C3UynN8unjXvHJJ+Fv3LYMFBgoxgD1yBIrOY/FK9J/55YOaSCf3ob2FhUDPra4s3xEIJPH4/Gfa7ilwzZAOQVkeGmkLXlHAd65UWY8Fq+lSd5W4OUxpF90YnnHpjt/DZnglg5p4DkVhKYeiItbvhaDuAG3dEgDyn0A9e8AoawRsZMTbumQBrK366gXfgOkERHvvOm8FdzSIQ2kkz5ToBO4pUMaSCVWUMvvW47bgVs6pIHr82UUlQg+lYAjuKXDMrDhm0XQ70YytoCbi0VHcEsHXaZAObeL8Oa85d9gJ9BBlynQLbocKOELFr6Ipmmz5ycAAAAASUVORK5CYII=" InformativeScreenshot="0212515813ed35dbb05e1f26d6e5fba7.png" Reference="lTMLQeuSGEut97auj2ZPLw/SgdBm9wtbEezNioxBLI3og" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Information' idx='*' /&gt;" SearchSteps="Selector" />
+                                                  </uix:NClick.Target>
+                                                </uix:NClick>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                          </ui:CommentOut>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,242" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(esc)][u(hk)]" />
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable ContentHash="UFujP_W-skqRNCs1TSshTw" DesignTimeRectangle="383, 135, 20, 20" ElementType="Button" FriendlyName="'Button_GreenCheckMark'" FullSelectorArgument="&lt;sap tooltip='?ontinue*nter*' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='?ontinue*nter*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGqSURBVEhLvZVPS8JwAIb7IH2LjkHnvkJ0CoSCik4eIqggyk5hYBhZShbYIYoOQYe8hZSH8mBUBBYKNozSUVr+29veH1my7ed0YYcH3dz7PNsu9uTUErrJ/wU+lB1s+efgco39CTroMgXWvDM43PNAKz8AlbQjuKWDLlNgcmIcaiYMrZIF6u+O4JYOuqQBVJ+A4pkz9K19oJazHhu4TFxhyNuP0dUp8V2c17e2Aa2aMcmMUDjgHoQn2idghOe5tQ+U74C3UynN8unjXvHJJ+Fv3LYMFBgoxgD1yBIrOY/FK9J/55YOaSCf3ob2FhUDPra4s3xEIJPH4/Gfa7ilwzZAOQVkeGmkLXlHAd65UWY8Fq+lSd5W4OUxpF90YnnHpjt/DZnglg5p4DkVhKYeiItbvhaDuAG3dEgDyn0A9e8AoawRsZMTbumQBrK366gXfgOkERHvvOm8FdzSIQ2kkz5ToBO4pUMaSCVWUMvvW47bgVs6pIHr82UUlQg+lYAjuKXDMrDhm0XQ70YytoCbi0VHcEsHXaZAObeL8Oa85d9gJ9BBlynQLbocKOELFr6Ipmmz5ycAAAAASUVORK5CYII=" InformativeScreenshot="0212515813ed35dbb05e1f26d6e5fba7.png" Reference="lTMLQeuSGEut97auj2ZPLw/SgdBm9wtbEezNioxBLI3og" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Information' idx='*' /&gt;" SearchSteps="Selector" />
+                                      </uix:NCheckState.Target>
+                                    </uix:NCheckState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable CheckVisibility="True" ContentHash="w7cfzDuUTESukeWqr8g9ew" DesignTimeRectangle="45, 141, 111, 22" ElementType="Button" FriendlyName="'Button_Yes'" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' check:text='Yes' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAaCAYAAACEuGN0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVGhD7dpPTxNBHMbxeTGG8AbwwKUH3gUH8NA0JsKFxHAwERNjkYvsAYKRPw1ogmmIxkvjQW+G6AHiAYJkEzAlwaZGSoMFC3Qf56G07nZnrceZcQ7flJ3OnD79zV4Q5eopXHbkMC2qjXlWeo7FuQmk07ddhkQvusUwZ717eP1yEkF9HzgvujSPTvSiWwxzdOQOqgcrCM4PgcZPl+bRiV50S8TExTeg9sGle9KpO+ZlWX3YpVfSqStmcHGgPuzSKjp1x6zvAifvXJpHp79iHhOztg5U3xjSBDJCILMWXfcneyFupuGH1myLTvRKxKwUlxGcvAcqq+aUH4DoG4Lfet4cQr8YQCG8x8LoRC+7MGWFWwL92enY382m4fUJCDnBQvTA24yea653ntE/azHb08jP8JTKIrjhKY5M9Dg8h6lPfrbnasIy+fD6uHynhq9cPl9PZ+f1bFhWYyrflVdrf67SZq2rNnz9dv4I9K8r5o+vObnpLXCUM6+NQQmXQiGyPiYnsXMtnp+9Iad0EL7iO12jE70SMb/vLSGovlIe1j4lZg6FYb4zp0LPzT1+NgVv43pfPgUxPNbeY0J0olciZsmfR8MyTBxNRa7TNhoBW2v/ML26RSd6JWIefnmKxrGhmP9ZdKJXImZxa8ZhGhKd6JWIuff5CS4ra8rDLr2iE70SMbc/PkattIpfpXmX5tGJXkrMZzP3sTR3F1vrD7Hz6ZFL8+hEL7rFMOvlF1hZeKD8xyGXntGLbjFMl/k5TGs6xW8YCJhPFg1YoQAAAABJRU5ErkJggg==" InformativeScreenshot="a9d31563e8b4062020c27d16e180f0c1.png" Reference="lTMLQeuSGEut97auj2ZPLw/522HQkucFUC3_PRVi0fPvg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="304,155" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign PopupExists" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[PopupExists]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable CheckVisibility="True" ContentHash="mdquveV4ckqTtS8xqZQM8A" DesignTimeRectangle="0, 24, 334, 146" ElementType="Container" FriendlyName="'Popup_Standard'" FullSelectorArgument="&lt;sap id='usr' /&gt;" FuzzySelectorArgument="&lt;sap id='usr' /&gt;" ImageBase64="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" InformativeScreenshot="434083c300fc1ee27bc340a16a546621.png" Reference="lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+            </ui:InterruptibleDoWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="QqLE8NyKCUqHVNOol0J8mA" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhHY/j//z/jQOJRB4w6YNQBA+8Ap5rV7E7Vqw8OCK5ZU8jgVL2GE8j4PwB4rXPtGsGBcgDIcmFIFNDfAXDLwQ44dOqipWP16v+O1auohFcDLQFhwpaDHfD20/fP9198/E8NvPf8vf9+DTBHELYc7ID3X37+pwY+e/Pxf7+K2f/tShdhcwBWy6nmgAu3n/73Lp3x37Z4AbYoWA+0XBCb5SBMsQPOAy33LJ72365kITafr3epW4vTchCmyAEgn3uWTIdavgrZ4r/EWA7CDA+evy1tW7Lvf8uiXSTi3f99yoFxToHlIMxglTuD075i2X/78qUkY4fK5ejBDrbcuQ53nKNjahZEUJ8TbzkIU8sBJPschqnlAKLjHB1TXh3XrJlJruUgPNoiGnXAqANGugP+MwIA+QFnw3tJZtEAAAAASUVORK5CYII=" InformativeScreenshot="ee3e844c1334848f4f486219fb519064.png" Reference="lTMLQeuSGEut97auj2ZPLw/EeCaCAGo9EyoWs_kYiRgWg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2397,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="688,2395" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Check for and Click Through Popups" sap:VirtualizedContainerService.HintSize="646,2271" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="PopupExists" />
+              <Variable x:TypeArguments="x:Boolean" Name="PopupIsVisible" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign Default PopupIsVisible" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[PopupIsVisible]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:UiElementExists DisplayName="Element Exists - Popup" Exists="[PopupExists]" sap:VirtualizedContainerService.HintSize="604,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="257b64af-8162-4530-a142-8347e9f3b8d9" InformativeScreenshot="1327af5ed199256e9bc397488fe87e20" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*i*' idx='*' /&gt;&lt;sap id='usr' /&gt;" TimeoutMS="[in_Timeout]">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[PopupExists]" DisplayName="If Popup exists, check its visibility" sap:VirtualizedContainerService.HintSize="604,601" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="480,415" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch - Check popup visibility" sap:VirtualizedContainerService.HintSize="438,323" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="relativeVisibility" DisplayName="Check if popup is visible" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+                        <ui:GetAttribute.Result>
+                          <OutArgument x:TypeArguments="x:Boolean">[PopupIsVisible]</OutArgument>
+                        </ui:GetAttribute.Result>
+                        <ui:GetAttribute.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7f86b72e-8e9c-4536-b794-428b280743f3" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*i*' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:GetAttribute.Target>
+                      </ui:GetAttribute>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;[SAP_ClickThroughPopups] - Popup seemed to exist, but robot could not check its visibility attribute!&quot;]" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Then>
+            </If>
+            <While sap:VirtualizedContainerService.HintSize="604,1292" sap2010:WorkflowViewState.IdRef="While_1" Condition="[PopupExists AndAlso PopupIsVisible]">
+              <Sequence sap:VirtualizedContainerService.HintSize="558,1134" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Enter'" sap:VirtualizedContainerService.HintSize="516,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5f73568-8068-46be-817c-686cced428fe" InformativeScreenshot="2a477772639c7525488813a0fbac59c4" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*i*' idx='*' /&gt;&lt;sap id='usr' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <Assign DisplayName="Assign Default PopupIsVisible" sap:VirtualizedContainerService.HintSize="516,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[PopupIsVisible]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:UiElementExists DisplayName="Element Exists - Popup" Exists="[PopupExists]" sap:VirtualizedContainerService.HintSize="516,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d275f58-2869-44c4-a55b-969228250d31" InformativeScreenshot="2a477772639c7525488813a0fbac59c4" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*i*' idx='*' /&gt;&lt;sap id='usr' /&gt;" TimeoutMS="[in_Timeout]">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[PopupExists]" DisplayName="If Popup exists, check its visibility" sap:VirtualizedContainerService.HintSize="516,602" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="480,415" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Try Catch - Check popup visibility" sap:VirtualizedContainerService.HintSize="438,323" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch.Try>
+                          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="relativeVisibility" DisplayName="Check if popup is visible" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                            <ui:GetAttribute.Result>
+                              <OutArgument x:TypeArguments="x:Boolean">[PopupIsVisible]</OutArgument>
+                            </ui:GetAttribute.Result>
+                            <ui:GetAttribute.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="777c75a7-6f1f-483d-aab4-2c83db0ff603" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*i*' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetAttribute.Target>
+                          </ui:GetAttribute>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;[SAP_ClickThroughPopups] - Popup seemed to exist, but robot could not check its visibility attribute!&quot;]" />
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </While>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

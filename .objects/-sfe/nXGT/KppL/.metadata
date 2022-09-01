@@ -1,0 +1,17 @@
+﻿{
+  "Id": "KppLjSoeQk-3rvuii8OnEw",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/KppLjSoeQk-3rvuii8OnEw",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "Dialog_RestrictValueRange",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-05-18T15:07:21.7350235Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.4.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T15:07:34.7334476Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

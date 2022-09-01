@@ -1,0 +1,15 @@
+﻿{
+  "Id": "r_FtsalajEWaRh16ru_M_g",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/r_FtsalajEWaRh16ru_M_g",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "Equipment",
+  "Type": "Screen",
+  "Created": "2022-06-15T13:37:20.8268233Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-15T13:37:42.8978339Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

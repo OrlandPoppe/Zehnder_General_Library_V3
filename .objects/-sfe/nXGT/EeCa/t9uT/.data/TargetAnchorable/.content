@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="Ipjat58lyEiWgdwSp48iBw" DesignTimeRectangle="62, 51, 142, 22" ElementType="InputBox" FriendlyName="'OkCodeField okcd'" FullSelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/okcd' /&gt;" Reference="lTMLQeuSGEut97auj2ZPLw/t9uTqsxUhkapJXID3gPPuw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" SearchSteps="Selector" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0UE9mtD3UYkCN1ZIgrgmxjA</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="bd8afb1b4d35f79b2934aa5380956062.png" xmlns="">0YR1cImK65kadA_NsrmwJoA</imageRef>
+</TargetAnchorable>

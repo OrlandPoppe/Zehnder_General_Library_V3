@@ -1,0 +1,14 @@
+﻿{
+  "Id": "wYtPfxR5VEus9YXzxVTtaw",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/wYtPfxR5VEus9YXzxVTtaw",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "IW58",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-05-18T15:03:24.9594797Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.4.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T15:03:24.9594797Z"
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Id": "uamub-2jX0KEnqAUvahuTw",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/uamub-2jX0KEnqAUvahuTw",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "CreateCustomer",
+  "Type": "Screen",
+  "Created": "2022-05-30T09:04:22.9795654Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-30T09:04:44.2358064Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

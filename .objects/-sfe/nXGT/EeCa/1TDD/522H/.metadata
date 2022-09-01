@@ -1,0 +1,16 @@
+﻿{
+  "Id": "522HQkucFUC3_PRVi0fPvg",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/522HQkucFUC3_PRVi0fPvg",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/1TDDUmSMtU6Qy3e_EU76GQ",
+  "Name": "Button_Yes",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-05-18T13:29:12.5766062Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T13:29:35.0449622Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

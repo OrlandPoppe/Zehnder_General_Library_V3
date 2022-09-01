@@ -1,0 +1,1 @@
+{"ticket": {"status": "{{in_TicketStatus}}", "group_id": {{in_MoveToGroupID}}, "comment": { "body": "{{in_MessageBody}}", "author_id": {{in_ZendeskAuthorID}} }}}

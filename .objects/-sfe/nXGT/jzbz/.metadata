@@ -1,0 +1,15 @@
+﻿{
+  "Id": "jzbzy5aZVkat_NnpaGq42w",
+  "Reference": "lTMLQeuSGEut97auj2ZPLw/jzbzy5aZVkat_NnpaGq42w",
+  "ParentRef": "lTMLQeuSGEut97auj2ZPLw/nXGTzmRg0U--0m8jtKc9Bw",
+  "Name": "HomeScreen",
+  "Type": "Screen",
+  "Created": "2022-05-18T13:49:28.8856246Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-05-18T13:49:55.428833Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
